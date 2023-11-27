@@ -4,7 +4,7 @@ import ReactPlayer from 'react-player'
 import VideoPlayer from '../video-player/VideoPlayer'
 
 
-interface IDesign {
+export interface IDesign {
      title: string,
      tag: string[],
      image?: string,
@@ -22,7 +22,7 @@ const Design: FC<IDesign> = ({ calssName, title, tag, image, video, link, imageW
      return (
           <div className={calssName}>
                {video ? <VideoPlayer url={`https://www.youtube.com/embed/r9jwGansp1E`}/>: 
-               <Image src={image} alt={title} {...wh} className={`h-[300px] object-cover ${imageWidth ? 'sm:h-full' : 'sm:h-full'}`}/> }
+               <Image src={image} alt={title} {...wh} className={`h-[300px] object-cover w-full ${imageWidth ? 'sm:h-full' : 'sm:h-full'}`}/> }
                <h3 className='font-pstime text-2xl md:text-[32px] mt-3'>{title}</h3>
                <ul className='text-gray flex gap-1 text-[13px]'>
                     {
