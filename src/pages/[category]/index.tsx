@@ -19,7 +19,7 @@ const Category = () => {
                                         <div className='text-xl mb-7 flex gap-1'>
                                              {item.year} <div dangerouslySetInnerHTML={{ __html: item.title}}/>
                                         </div>
-                                        <div className={`grid gap-5 grid-cols-2 ${item?.images.length > 2 ? item?.images.length > 4 ? 'md:grid-cols-4' : `md:grid-cols-${item?.images.length}` : 'md:grid-cols-3'}`}>
+                                        <div className={`grid gap-3 md:gap-5 grid-cols-2 ${item?.images.length > 2 ? item?.images.length > 4 ? 'md:grid-cols-4' : `md:grid-cols-${item?.images.length}` : 'md:grid-cols-3'}`}>
                                              {
                                                   item?.images?.map((img: any, i: number) => (
                                                       <div key={i} > <Image src={img} alt={item.title} width={440} height={600} className='w-full' /></div>
