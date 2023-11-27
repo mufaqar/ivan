@@ -1,8 +1,11 @@
 import Link from 'next/link'
+import { useRouter } from 'next/router'
 import React, { FC, useState } from 'react'
 
 const Header: FC<any> = ({ title }) => {
      const [mobileNav, setMobileNav] = useState(false)
+     const {pathname} = useRouter()
+
      return (
           <>
                <header className='md:my-10 py-4 px-4 font-pstime gap-10 flex justify-between items-start'>
@@ -13,8 +16,8 @@ const Header: FC<any> = ({ title }) => {
                          />
                     </Link>
                     <ul className='text-[28px] md:flex items-center gap-4 hidden'>
-                         <li className='hover:underline'><Link href="/work">Work</Link></li>
-                         <li className='hover:underline'><Link href="#">Info</Link></li>
+                         <li className={`hover:underline ${pathname.replace('/', '') === 'work' && 'underline'}`}><Link href="/work">Work</Link></li>
+                         <li className={`hover:underline ${pathname.replace('/', '') === 'info' && 'underline'}`}><Link href="#">Info</Link></li>
                     </ul>
                     <div className='bg-yellow h-12 px-2 z-50 rounded-full md:hidden flex flex-col items-center justify-center' onClick={() => setMobileNav(!mobileNav)}>
                          {
