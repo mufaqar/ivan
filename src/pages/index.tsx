@@ -22,7 +22,7 @@ export default function Home() {
               link="#"
               calssName="md:pb-10"
             />
-            <div className='flex justify-end items-end col-span-2 md:col-span-1 d2'>
+            <div className='md:flex justify-end items-end col-span-2 md:col-span-1 d2'>
               <Design
                 title="Mock Sun"
                 tag={designTags}
@@ -41,7 +41,7 @@ export default function Home() {
                 calssName="md:ml-20 md:pb-6"
               />
             </div>
-            <div className='flex justify-end items-end'>
+            <div className='md:flex md:justify-end items-end'>
               <Design
                 title="Don’t Look at Me"
                 tag={designTags}
@@ -50,7 +50,7 @@ export default function Home() {
                 calssName=""
               />
             </div>
-            <div className='flex justify-end'>
+            <div className='md:flex md:justify-end'>
               <Design
                 title="Condo MX"
                 tag={designTags}
@@ -78,7 +78,7 @@ export default function Home() {
               tag={designTags}
               image='/images/image-2.jpg'
               link="#"
-              calssName="mr-20"
+              calssName="md:mr-20"
             />
           </div>
         </div>

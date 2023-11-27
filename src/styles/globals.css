@@ -27,4 +27,7 @@ dody, html{
      .d2{
           order: 3;
      }
+     ._img{
+          width: 100%;
+     }
 }
