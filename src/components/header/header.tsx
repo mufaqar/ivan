@@ -54,7 +54,7 @@ const MobileNavMenu = ({ mobileNav }: any) => {
                     {
                          mobileNavList.map((nav: ImobileNavList, idx) => (
                               <li key={idx} className='text-[32px] flex flex-col justify-center capitalize items-center font-pstime'>
-                                   {nav.name}
+                                   <Link href={nav.link}>{nav.name}</Link>
                                    <ul className='flex gap-3'>
                                         {
                                              nav.subNav?.map((subN, id) => (
