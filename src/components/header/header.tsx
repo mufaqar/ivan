@@ -79,7 +79,7 @@ const MobileNavMenu = ({ mobileNav }: any) => {
 const mobileNavList = [
      {
           name: 'Work',
-          link: "#",
+          link: "/work",
           subNav: [
                {
                     name: 'Art',
