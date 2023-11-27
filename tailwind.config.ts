@@ -13,8 +13,19 @@ const config: Config = {
         'gradient-conic':
           'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
       },
+      colors: {
+        main: "#111",
+        gray: "#919191",
+        yellow: "#F7F152",
+      },
+      fontFamily: {
+        'pstime': "PSTime",
+        "abcwhyte": "ABCWhyte"
+      },  
     },
   },
-  plugins: [],
+  plugins: [
+    require('@tailwindcss/aspect-ratio'),
+  ],
 }
 export default config
