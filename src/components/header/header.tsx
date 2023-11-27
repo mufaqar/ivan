@@ -9,11 +9,9 @@ const Header: FC<any> = ({ title }) => {
      return (
           <>
                <header className='md:my-10 py-4 px-4 font-pstime gap-10 flex justify-between items-start'>
-                    <Link href="/">
-                         <div
-                              className='md:text-[40px] max-w-[600px] md:leading-[50px] text-2xl'
-                              dangerouslySetInnerHTML={{ __html: title }}
-                         />
+                    <Link href="/" className='md:text-[40px] max-w-[600px] md:leading-[50px] md:-mt-4 text-2xl'>
+                         <div dangerouslySetInnerHTML={{ __html: title }} />
+                         {!title && 'Ivan Iannoli'}
                     </Link>
                     <ul className='text-[28px] md:flex items-center gap-4 hidden'>
                          <li className={`hover:underline ${pathname.replace('/', '') === 'work' && 'underline'}`}><Link href="/work">Work</Link></li>
