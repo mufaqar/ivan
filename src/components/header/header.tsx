@@ -11,7 +11,7 @@ const Header: FC<any> = ({ title }) => {
                          dangerouslySetInnerHTML={{ __html: title }}
                     />
                     <ul className='text-[28px] md:flex items-center gap-4 hidden'>
-                         <li className='hover:underline'><Link href="#">Work</Link></li>
+                         <li className='hover:underline'><Link href="/work">Work</Link></li>
                          <li className='hover:underline'><Link href="#">Info</Link></li>
                     </ul>
                     <div className='bg-yellow h-12 px-2 z-50 rounded-full md:hidden flex flex-col items-center justify-center' onClick={()=>setMobileNav(!mobileNav)}>
