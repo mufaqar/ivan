@@ -19,7 +19,7 @@ export default function Home() {
               title="Clocks"
               tag={designTags}
               image='/images/image-1.jpg'
-              link="#"
+              link="/clock"
               calssName="md:pb-10"
             />
             <div className='md:flex justify-end items-end col-span-2 md:col-span-1 d2'>
