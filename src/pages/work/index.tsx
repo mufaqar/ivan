@@ -57,7 +57,7 @@ const Filter = [
 
 var designTags = ["DESIGN", "OBJECTS"]
 
-const WorkData = [
+export const WorkData = [
      {
           title: "Don’t Look at Me",
           tag: { designTags },
