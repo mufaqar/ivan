@@ -27,7 +27,7 @@ const LightBox = () => {
   );
   
   return (
-    <div className="max-w-[950px] w-full mx-auto relative p-16 ">
+    <div className="max-w-[950px] w-full mx-auto relative p-16 border border-gray/30">
       <div className="w-[340px] absolute top-1/2 right-[70px] transform -translate-y-1/2 z-50">
         <Slider 
           asNavFor={nav2} 
