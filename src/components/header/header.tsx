@@ -17,11 +17,11 @@ const Header: FC<any> = ({ title }) => {
                          <li className={`hover:underline ${pathname.replace('/', '') === 'work' && 'underline'}`}><Link href="/work">Work</Link></li>
                          <li className={`hover:underline ${pathname.replace('/', '') === 'info' && 'underline'}`}><Link href="/info">Info</Link></li>
                     </ul>
-                    <div className='bg-yellow h-12 px-2 z-50 rounded-full md:hidden flex flex-col items-center justify-center' onClick={() => setMobileNav(!mobileNav)}>
+                    <div className={` ${pathname.replace('/', '') === 'info' ? 'bg-main text-yellow' : 'bg-yellow'} h-12 px-2 z-50 rounded-full md:hidden flex flex-col items-center justify-center`} onClick={() => setMobileNav(!mobileNav)}>
                          {
                               mobileNav ? <button className='pl-1 pr-1'>
-                                   <div className='p-[1px] w-6 bg-main -rotate-45' />
-                                   <div className='p-[1px] w-6 bg-main rotate-45' />
+                                   <div className={`p-[1px] w-6  -rotate-45 ${pathname.replace('/', '') === 'info' ? 'bg-yellow' : 'bg-main' } `} />
+                                   <div className={`p-[1px] w-6 bg-main rotate-45 ${pathname.replace('/', '') === 'info' ? 'bg-yellow' : 'bg-main' } `} />
                               </button> : <button className='uppercase text-[10px] font-abcwhyte '>Menu</button>
                          }
                     </div>
@@ -98,6 +98,6 @@ const mobileNavList = [
      },
      {
           name: 'Inquire',
-          link: "#",
+          link: "/inquire",
      }
 ]
