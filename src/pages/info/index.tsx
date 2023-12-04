@@ -15,7 +15,7 @@ const Info = ({allInfo}:any) => {
      console.log("🚀 ~ file: index.tsx:15 ~ Info ~ allInfo:", allInfo)
      const [openCV, setOpenCV] = useState<boolean>(false)
      const [expand, setExpand] = useState<boolean>(true)
-     const {Features, cv, cvbio, education, info, title } = allInfo[0]
+     const {Features, cv, cvbio, education, info } = allInfo[0]
 
      return (
           <div className='bg-yellow'>
