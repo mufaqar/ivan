@@ -23,12 +23,12 @@ const Design: FC<IDesign> = ({ calssName, title, tag, image, video, link, imageW
      return (
           <div className={calssName}>
                {video ? <VideoPlayer url={`https://www.youtube.com/embed/r9jwGansp1E`}/>: 
-               <Link href={link}><Image src={image} alt={title} {...wh} className={`h-[300px] object-cover _img ${imageWidth ? 'sm:h-full' : 'sm:h-full'}`}/> </Link>}
+               <Link href={link}><Image src={image} alt={title} {...wh} className={`h-[300px] object-cover lg:w-full _img ${imageWidth ? 'sm:h-full' : 'sm:h-full'}`}/> </Link>}
                <h3 className='font-pstime text-2xl md:text-[32px] mt-3'><Link href={link}>{title}</Link></h3>
                <ul className='text-gray flex gap-1 text-[13px]'>
                     {
-                         tag.map((t, idx) => (
-                              <li key={idx}>{t}{tag.length !== idx + 1 && ','}</li>
+                         tag?.map((t:any, idx) => (
+                              <li key={idx} className='capitalize'>{t.name}{tag.length !== idx + 1 && ','}</li>
                          ))
                     }
                </ul>
