@@ -9,17 +9,17 @@ import { SlArrowUp } from "react-icons/sl";
 import { client } from '../../../sanity/lib/client';
 import { CV } from '../../../sanity/lib/queries';
 
-const title = 'Ivan Iannoli lives and works in SF* and can be reached at 555-555-5555, <u>email@iannoli.com</u>, <u>@ivaniannoli</u>'
+const Htitle = 'Ivan Iannoli lives and works in SF* and can be reached at 555-555-5555, <u>email@iannoli.com</u>, <u>@ivaniannoli</u>'
 
 const Info = ({allInfo}:any) => {
      console.log("🚀 ~ file: index.tsx:15 ~ Info ~ allInfo:", allInfo)
      const [openCV, setOpenCV] = useState<boolean>(false)
      const [expand, setExpand] = useState<boolean>(true)
-     const {Features, cv, cvbio, education, info } = allInfo[0]
+     const {Features, cv, cvbio, education, info, title } = allInfo[0]
 
      return (
           <div className='bg-yellow'>
-               <Header title={title} />
+               <Header title={Htitle} />
                <Layout>
                     <section className='py-28 border-b'>
                          <h2 className='font-pstime text-4xl md:text-5xl lg:text-6xl'>{title}</h2>
