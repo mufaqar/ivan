@@ -6,6 +6,7 @@ import { RxCross2 } from "react-icons/rx";
 import { BsArrowRightCircleFill, BsArrowLeftCircleFill } from "react-icons/bs";
 
 const WorkDetails = ({ closeModal, data }) => {
+  console.log("🚀 ~ file: work_details.jsx:9 ~ WorkDetails ~ data:", data)
   const settings = {
     dots: false,
     infinite: true,

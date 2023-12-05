@@ -41,33 +41,6 @@ export default {
       options: {
         hotspot: true // <-- Defaults to false
       },
-      fields: [
-        {
-          name: 'caption_info',
-          type: 'string',
-          title: 'Caption Info',
-        },
-        {
-          name: 'projectyear',
-          type: 'string',
-          title: 'Project Year',
-        },
-        {
-          name: 'dimensions',
-          type: 'string',
-          title: 'Dimensions',
-        },
-        {
-          name: 'media',
-          type: 'string',
-          title: 'Media',
-        },
-        {
-          name: 'note',
-          type: 'string',
-          title: 'Note',
-        },
-      ]
     },
     {
       name: 'video_url',
@@ -84,16 +57,10 @@ export default {
           type: 'object',
           fields: [
             {
-              name: 'title',
+              name: 'caption_info',
               type: 'string',
-              title: 'Title',
+              title: 'Caption Info',
             },
-            {
-              name: 'projectyear',
-              type: 'string',
-              title: 'Project Year',
-            },
-            
             {
               title: 'Images List',
               name: 'imageslist',
@@ -108,7 +75,34 @@ export default {
                       type: 'image',
                       options: {
                         hotspot: true
-                      }
+                      },
+                      fields: [
+                        {
+                          name: 'caption_info',
+                          type: 'string',
+                          title: 'Caption Info',
+                        },
+                        {
+                          name: 'projectyear',
+                          type: 'string',
+                          title: 'Project Year',
+                        },
+                        {
+                          name: 'dimensions',
+                          type: 'string',
+                          title: 'Dimensions',
+                        },
+                        {
+                          name: 'media',
+                          type: 'string',
+                          title: 'Media',
+                        },
+                        {
+                          name: 'note',
+                          type: 'string',
+                          title: 'Note',
+                        },
+                      ]
                     },
                   ]
                 }
