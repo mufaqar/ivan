@@ -19,7 +19,7 @@ const WorkDetails = ({ closeModal, data }) => {
   return (
     <>
       <div className="w-screen h-screen mx-auto relative border border-gray/30 z-50">
-        <button className="absolute text-2xl z-[101] top-10s right-3" onClick={closeModal}>
+        <button className="absolute text-2xl z-[101] top-10 right-3" onClick={closeModal}>
           <RxCross2 />
         </button>
         <div className="z-50 w-full h-full">
