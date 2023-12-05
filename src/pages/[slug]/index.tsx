@@ -30,7 +30,7 @@ const Category = ({ work }: any) => {
           <>
                <Header />
                <Layout>
-                    <PageHeader title="Clocks" subTitle='Small blurb about the clocks' />
+                    <PageHeader title={work?.title} subTitle={work?.title} />
                     <div className='mt-10 flex flex-col gap-10 md:gap-20'>
                          {
                               sortedData?.map((item: any, idx: number) => (
@@ -41,7 +41,7 @@ const Category = ({ work }: any) => {
                                         <div className={`grid gap-3 md:gap-5 grid-cols-2 ${item?.imageslist.length > 2 ? item?.imageslist.length > 4 ? 'md:grid-cols-4' : `md:grid-cols-${item?.imageslist.length}` : 'md:grid-cols-3'}`}>
                                              {
                                                   item?.imageslist?.map((img: any, i: number) => (
-                                                       <div key={i} onClick={()=>{openModal(); setData(item)}} > <Image src={urlForImage(img?.image?.asset?._ref).width(306).url()} alt={item.title} width={440} height={600} className='w-full' /></div>
+                                                       <div key={i} onClick={()=>{openModal(); setData(item)}} > <Image src={urlForImage(img?.image?.asset?._ref).width(306).url()} alt={item.title} width={440} height={600} className='w-full h-full object-cover' /></div>
                                                   ))
                                              }
                                         </div>
