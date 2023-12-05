@@ -37,3 +37,7 @@ dody, html{
      padding: 0 !important;
      border: none !important
 }
+
+.slick-slider.slick-initialized{
+     overflow: hidden;
+}

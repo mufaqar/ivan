@@ -41,6 +41,33 @@ export default {
       options: {
         hotspot: true // <-- Defaults to false
       },
+      fields: [
+        {
+          name: 'caption_info',
+          type: 'string',
+          title: 'Caption Info',
+        },
+        {
+          name: 'projectyear',
+          type: 'string',
+          title: 'Project Year',
+        },
+        {
+          name: 'dimensions',
+          type: 'string',
+          title: 'Dimensions',
+        },
+        {
+          name: 'media',
+          type: 'string',
+          title: 'Media',
+        },
+        {
+          name: 'note',
+          type: 'string',
+          title: 'Note',
+        },
+      ]
     },
     {
       name: 'video_url',
@@ -57,30 +84,16 @@ export default {
           type: 'object',
           fields: [
             {
-              name: 'caption_info',
+              name: 'title',
               type: 'string',
-              title: 'Caption Info',
+              title: 'Title',
             },
             {
               name: 'projectyear',
               type: 'string',
               title: 'Project Year',
             },
-            {
-              name: 'dimensions',
-              type: 'string',
-              title: 'Dimensions',
-            },
-            {
-              name: 'media',
-              type: 'string',
-              title: 'Media',
-            },
-            {
-              name: 'note',
-              type: 'string',
-              title: 'Note',
-            },
+            
             {
               title: 'Images List',
               name: 'imageslist',

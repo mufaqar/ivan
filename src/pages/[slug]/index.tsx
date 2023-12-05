@@ -17,9 +17,11 @@ const Category = ({ work }: any) => {
 
      function openModal() {
           setIsOpen(true);
+          document.body.style.overflow = 'hidden';
      }
      function closeModal() {
           setIsOpen(false);
+          document.body.style.overflow = 'auto';
      }
      Modal.setAppElement('*');
 

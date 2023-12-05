@@ -3,7 +3,6 @@ export default {
      title: 'CV',
      type: 'document',
      fields: [
-       
         {
           name: 'title',
           title: 'Title',

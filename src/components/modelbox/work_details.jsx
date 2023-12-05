@@ -2,108 +2,81 @@ import Image from "next/image";
 import React, { useState, useEffect, useRef } from "react";
 import Slider from "react-slick";
 import { urlForImage } from "../../../sanity/lib/image";
+import { RxCross2 } from "react-icons/rx";
+import { BsArrowRightCircleFill, BsArrowLeftCircleFill } from "react-icons/bs";
 
 const WorkDetails = ({ closeModal, data }) => {
-  console.log("🚀 ~ file: work_details.jsx:7 ~ WorkDetails ~ data:", data)
-  const [nav1, setNav1] = useState(null);
-  const [nav2, setNav2] = useState(null);
-  const slider1 = useRef(null);
-  const slider2 = useRef(null);
+  const settings = {
+    dots: false,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+  };
 
-  useEffect(() => {
-    setNav1(slider1.current);
-    setNav2(slider2.current);
-  }, []);
-
-  const customPrevArrow = (props) => (
-    <button {...props} className="slick-arrow custom-prev">
-      Previous
-    </button>
-  );
-
-  const customNextArrow = (props) => (
-    <button {...props} className="slick-arrow custom-next">
-      Next
-    </button>
-  );
+  const slider = React.useRef(null);
 
   return (
     <>
-      <div className="max-w-[950px] w-full mx-auto relative p-12  border border-gray/30">
-          <button className="absolute top-5 left-5" onClick={closeModal}>Close</button>
-        <div className="w-[340px] absolute top-1/2 right-[35px] transform -translate-y-1/2 z-50">
-          <Slider
-            asNavFor={nav2}
-            ref={slider1}
-            prevArrow={<customPrevArrow />}
-            nextArrow={<customNextArrow />}
-          >
+      <div className="w-screen h-screen mx-auto relative border border-gray/30 z-50">
+        <button className="absolute text-2xl z-[100] top-3 right-3" onClick={closeModal}>
+          <RxCross2 />
+        </button>
+        <div className="z-50 w-full h-full">
+          <div className="flex flex-col justify-end md:ml-20 absolute md:bottom-10 left-0 z-50 bg-white p-4 md:p-7">
+            <div className="text-4xl mb-4 flex gap-2">
+              <button onClick={() => slider?.current?.slickPrev()}>
+                <BsArrowLeftCircleFill />
+              </button>
+              <button onClick={() => slider?.current?.slickNext()}>
+                <BsArrowRightCircleFill />
+              </button>
+            </div>
+            <ul className="text-xs sm:text-sm">
+              <li>
+                <strong>Caption Info: </strong>
+                <span className="font-light">{data?.caption_info}</span>
+              </li>
+              <li>
+                <strong>Title: </strong>
+                <span className="font-light"></span>
+              </li>
+              <li>
+                <strong>Dimensions: </strong>
+                <span className="font-light">{data?.dimensions}</span>
+              </li>
+              <li>
+                <strong>Media: </strong>
+                <span className="font-light">{data?.media}</span>
+              </li>
+              <li>
+                <strong>Year: </strong>
+                <span className="font-light">{data?.projectyear}</span>
+              </li>
+              <li>
+                <strong>Notes: </strong>
+                <span className="font-light">{data?.note}</span>
+              </li>
+            </ul>
+          </div>
+          <Slider {...settings} ref={slider}>
             {data?.imageslist?.map((item, id) => (
-              <div key={id} className="bg-black">
-                <Image
-                  src={urlForImage(item.image?.asset?._ref || fallbackImage)
-                    .width(306)
-                    .url()}
-                  alt={""}
-                  width={300}
-                  height={400}
-                  className="h-[460px] w-full object-cover"
-                />
+              <div className="!grid md:grid-cols-2" key={id}>
+                <div></div>
+                <div className="flex justify-end items-center flex-col h-full mt-[4%]">
+                  <Image
+                    src={urlForImage(item.image?.asset?._ref || fallbackImage)
+                      .width(306)
+                      .url()}
+                    alt={""}
+                    width={600}
+                    height={400}
+                    className="object-contain mt-[10%] md:mt-0 h-[90vh] overflow-hidden"
+                  />
+                </div>
               </div>
             ))}
           </Slider>
-        </div>
-
-        <div className="shade opacity-[0.03]">
-          <Slider
-            asNavFor={nav1}
-            ref={slider2}
-            slidesToShow={3}
-            swipeToSlide={true}
-            focusOnSelect={true}
-          >
-            {data?.imageslist?.map((item, id) => (
-              <figure key={id} className="p-2">
-                <Image
-                  src={urlForImage(item.image?.asset?._ref || fallbackImage)
-                    .width(306)
-                    .url()}
-                  alt={item.title}
-                  width={300}
-                  height={400}
-                  className="h-[420px] w-full object-cover"
-                />
-              </figure>
-            ))}
-          </Slider>
-        </div>
-        <div className="-mt-[150px] max-w-[400px]">
-          <ul>
-            <li>
-              <strong>Caption Info: </strong>
-              <span className="font-light">{data?.caption_info}</span>
-            </li>
-            <li>
-              <strong>Title: </strong>
-              <span className="font-light"></span>
-            </li>
-            <li>
-              <strong>Dimensions: </strong>
-              <span className="font-light">{data?.dimensions}</span>
-            </li>
-            <li>
-              <strong>Media: </strong>
-              <span className="font-light">{data?.media}</span>
-            </li>
-            <li>
-              <strong>Year: </strong>
-              <span className="font-light">{data?.projectyear}</span>
-            </li>
-            <li>
-              <strong>Notes: </strong>
-              <span className="font-light">{data?.note}</span>
-            </li>
-          </ul>
         </div>
       </div>
     </>
