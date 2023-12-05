@@ -8,7 +8,7 @@ const Header: FC<any> = ({ title }) => {
 
      return (
           <>
-               <header className='md:py-10 py-4 px-4 font-pstime gap-10 flex justify-between items-start'>
+               <header className='md:py-10 py-4 px-4 font-pstime z-50 relative gap-10 flex justify-between items-start'>
                     <Link href="/" className='md:text-[40px] max-w-[600px] md:leading-[50px] md:-mt-4 text-2xl'>
                          <div dangerouslySetInnerHTML={{ __html: title }} />
                          {!title && 'Ivan Iannoli'}

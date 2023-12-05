@@ -41,3 +41,6 @@ dody, html{
 .slick-slider.slick-initialized{
      overflow: hidden;
 }
+.ReactModal__Overlay{
+     z-index: 111;
+}

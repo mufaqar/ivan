@@ -23,7 +23,7 @@ const WorkDetails = ({ closeModal, data }) => {
           <RxCross2 />
         </button>
         <div className="z-50 w-full h-full">
-          <div className="flex flex-col top-2 justify-end md:ml-20 z-[100] absolute md:bottom-10 left-0 bg-white p-4 md:p-7">
+          <div className="flex flex-col bottom-2 justify-end md:ml-20 z-[100] absolute md:bottom-10 left-0 bg-white p-4 md:p-7">
             <div className="text-4xl mb-4 flex gap-2">
               <button onClick={() => slider?.current?.slickPrev()}>
                 <BsArrowLeftCircleFill />
