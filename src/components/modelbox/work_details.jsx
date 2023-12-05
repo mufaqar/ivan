@@ -63,7 +63,7 @@ const WorkDetails = ({ closeModal, data }) => {
             {data?.imageslist?.map((item, id) => (
               <div className="!grid md:grid-cols-2" key={id}>
                 <div></div>
-                <div className="flex justify-end items-center flex-col h-full mt-[4%]">
+                <div className="flex justify-start md:justify-end items-center flex-col h-full mt-[4%]">
                   <Image
                     src={urlForImage(item.image?.asset?._ref || fallbackImage)
                       .width(306)
@@ -71,7 +71,7 @@ const WorkDetails = ({ closeModal, data }) => {
                     alt={""}
                     width={600}
                     height={400}
-                    className="object-contain h-[90vh] overflow-hidden"
+                    className="object-contain h-auto md:h-[90vh] overflow-hidden"
                   />
                 </div>
               </div>
