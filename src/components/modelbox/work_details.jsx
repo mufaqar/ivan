@@ -19,11 +19,11 @@ const WorkDetails = ({ closeModal, data }) => {
   return (
     <>
       <div className="w-screen h-screen mx-auto relative border border-gray/30 z-50">
-        <button className="absolute text-2xl z-[100] top-3 right-3" onClick={closeModal}>
+        <button className="absolute text-2xl z-[101] top-3 right-3" onClick={closeModal}>
           <RxCross2 />
         </button>
         <div className="z-50 w-full h-full">
-          <div className="flex flex-col justify-end md:ml-20 absolute md:bottom-10 left-0 z-50 bg-white p-4 md:p-7">
+          <div className="flex flex-col top-2 justify-end md:ml-20 z-[100] absolute md:bottom-10 left-0 bg-white p-4 md:p-7">
             <div className="text-4xl mb-4 flex gap-2">
               <button onClick={() => slider?.current?.slickPrev()}>
                 <BsArrowLeftCircleFill />
