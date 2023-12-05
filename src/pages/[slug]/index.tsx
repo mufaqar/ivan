@@ -11,6 +11,7 @@ import Modal from "react-modal";
 import WorkDetails from '@/components/modelbox/work_details'
 
 const Category = ({ work }: any) => {
+     console.log("🚀 ~ file: index.tsx:14 ~ Category ~ work:", work)
      const sortedData = work.portfolio.slice().sort((a: any, b: any) => b.projectyear - a.projectyear);
      const [modalIsOpen, setIsOpen] = React.useState(false);
      const [data, setData] = useState<any>()

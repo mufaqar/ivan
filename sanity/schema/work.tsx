@@ -62,6 +62,26 @@ export default {
               title: 'Caption Info',
             },
             {
+              name: 'projectyear',
+              type: 'string',
+              title: 'Project Year',
+            },
+            {
+              name: 'dimensions',
+              type: 'string',
+              title: 'Dimensions',
+            },
+            {
+              name: 'media',
+              type: 'string',
+              title: 'Media',
+            },
+            {
+              name: 'note',
+              type: 'string',
+              title: 'Note',
+            },
+            {
               title: 'Images List',
               name: 'imageslist',
               type: 'array',
@@ -75,34 +95,7 @@ export default {
                       type: 'image',
                       options: {
                         hotspot: true
-                      },
-                      fields: [
-                        {
-                          name: 'caption_info',
-                          type: 'string',
-                          title: 'Caption Info',
-                        },
-                        {
-                          name: 'projectyear',
-                          type: 'string',
-                          title: 'Project Year',
-                        },
-                        {
-                          name: 'dimensions',
-                          type: 'string',
-                          title: 'Dimensions',
-                        },
-                        {
-                          name: 'media',
-                          type: 'string',
-                          title: 'Media',
-                        },
-                        {
-                          name: 'note',
-                          type: 'string',
-                          title: 'Note',
-                        },
-                      ]
+                      }
                     },
                   ]
                 }
