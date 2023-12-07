@@ -37,7 +37,7 @@ const WorkDetails = ({ closeModal, data }) => {
           <Slider {...settings} ref={slider}>
             {data?.imageslist?.map((item, id) => (
               <div className="!grid md:grid-cols-2" key={id}>
-                <div className="p-4 pb-0 flex md:justify-center lg:justify-end md:ml-20 items-start flex-col editor">
+                <div className="p-4 pb-0 flex md:justify-center pt-12 md:pt-0 lg:justify-end md:ml-20 items-start flex-col editor">
                   <BlockContent blocks={item?.info} />
                 </div>
                 <div className="flex justify-start md:justify-end items-center flex-col h-full mt-[4%]">
