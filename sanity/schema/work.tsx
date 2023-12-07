@@ -57,29 +57,32 @@ export default {
           type: 'object',
           fields: [
             {
-              name: 'caption_info',
-              type: 'string',
-              title: 'Caption Info',
-            },
-            {
-              name: 'projectyear',
-              type: 'string',
-              title: 'Project Year',
-            },
-            {
-              name: 'dimensions',
-              type: 'string',
-              title: 'Dimensions',
-            },
-            {
-              name: 'media',
-              type: 'string',
-              title: 'Media',
-            },
-            {
-              name: 'note',
-              type: 'string',
-              title: 'Note',
+              name: 'detail',
+                title: 'Detail',
+                  type: 'array',
+                    of: [
+                      {
+                        type: 'block'
+                      },
+                      {
+                        type: 'image',
+                        fields: [
+                          {
+                            type: 'text',
+                            name: 'alt',
+                            title: 'Alternative text',
+                            description: `Some of your visitors cannot see images, 
+                          be they blind, color-blind, low-sighted; 
+                          alternative text is of great help for those 
+                          people that can rely on it to have a good idea of 
+                          what\'s on your page.`,
+                            options: {
+                              isHighlighted: true
+                            }
+                          }
+                        ]
+                      },
+                    ]
             },
             {
               title: 'Images List',
@@ -96,6 +99,34 @@ export default {
                       options: {
                         hotspot: true
                       }
+                    },
+                    {
+                      name: 'info',
+                        title: 'Info',
+                          type: 'array',
+                            of: [
+                              {
+                                type: 'block'
+                              },
+                              {
+                                type: 'image',
+                                fields: [
+                                  {
+                                    type: 'text',
+                                    name: 'alt',
+                                    title: 'Alternative text',
+                                    description: `Some of your visitors cannot see images, 
+                                  be they blind, color-blind, low-sighted; 
+                                  alternative text is of great help for those 
+                                  people that can rely on it to have a good idea of 
+                                  what\'s on your page.`,
+                                    options: {
+                                      isHighlighted: true
+                                    }
+                                  }
+                                ]
+                              },
+                            ]
                     },
                   ]
                 }

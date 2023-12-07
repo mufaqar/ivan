@@ -4,6 +4,7 @@ import Slider from "react-slick";
 import { urlForImage } from "../../../sanity/lib/image";
 import { RxCross2 } from "react-icons/rx";
 import { BsArrowRightCircleFill, BsArrowLeftCircleFill } from "react-icons/bs";
+import BlockContent from "@sanity/block-content-to-react";
 
 const WorkDetails = ({ closeModal, data }) => {
   console.log("🚀 ~ file: work_details.jsx:9 ~ WorkDetails ~ data:", data)
@@ -20,12 +21,12 @@ const WorkDetails = ({ closeModal, data }) => {
   return (
     <>
       <div className="w-screen h-screen mx-auto relative border border-gray/30 z-50">
-        <button className="absolute text-2xl z-[101] bg-yellow rounded-full p-1 top-10 right-3" onClick={closeModal}>
+        <button className="absolute text-2xl z-[101] bg-yellow rounded-full p-1 md:top-3 top-10 right-3" onClick={closeModal}>
           <RxCross2 />
         </button>
         <div className="z-50 w-full h-full">
-          <div className="flex flex-col bottom-7 justify-end md:ml-20 z-[100] absolute md:bottom-10 left-0 bg-white p-4 md:p-7">
-            <div className="text-4xl mb-4 md:mb-8 flex gap-2">
+          <div className="flex flex-col bottom-7 justify-end md:ml-20 z-[100] absolute md:bottom-52 md:-left-7 p-4 md:p-7">
+            <div className="text-4xl mb-4 md:mb-4 flex gap-2">
               <button onClick={() => slider?.current?.slickPrev()}>
                 <BsArrowLeftCircleFill />
               </button>
@@ -33,37 +34,13 @@ const WorkDetails = ({ closeModal, data }) => {
                 <BsArrowRightCircleFill />
               </button>
             </div>
-            <ul className="text-xs sm:text-sm">
-              <li>
-                <strong>Caption Info: </strong>
-                <span className="font-light">{data?.caption_info}</span>
-              </li>
-              <li>
-                <strong>Title: </strong>
-                <span className="font-light"></span>
-              </li>
-              <li>
-                <strong>Dimensions: </strong>
-                <span className="font-light">{data?.dimensions}</span>
-              </li>
-              <li>
-                <strong>Media: </strong>
-                <span className="font-light">{data?.media}</span>
-              </li>
-              <li>
-                <strong>Year: </strong>
-                <span className="font-light">{data?.projectyear}</span>
-              </li>
-              <li>
-                <strong>Notes: </strong>
-                <span className="font-light">{data?.note}</span>
-              </li>
-            </ul>
           </div>
           <Slider {...settings} ref={slider}>
             {data?.imageslist?.map((item, id) => (
               <div className="!grid md:grid-cols-2" key={id}>
-                <div></div>
+                <div className="p-4 pb-0 md:pl-20 flex md:justify-center md:justify-end items-center flex-col">
+                  <BlockContent blocks={item?.info} />
+                </div>
                 <div className="flex justify-start md:justify-end items-center flex-col h-full mt-[4%]">
                   <Image
                     src={urlForImage(item.image?.asset?._ref || fallbackImage)

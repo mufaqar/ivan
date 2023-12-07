@@ -9,12 +9,13 @@ import { singleWork } from '../../../sanity/lib/queries'
 import { urlForImage } from '../../../sanity/lib/image'
 import Modal from "react-modal";
 import WorkDetails from '@/components/modelbox/work_details'
+import BlockContent from "@sanity/block-content-to-react";
 
-const Category = ({ work }: any) => {
-     console.log("🚀 ~ file: index.tsx:14 ~ Category ~ work:", work)
-     const sortedData = work.portfolio.slice().sort((a: any, b: any) => b.projectyear - a.projectyear);
+
+const Category = ({ work }) => {
+     const sortedData = work.portfolio.slice().sort((a, b) => b.projectyear - a.projectyear);
      const [modalIsOpen, setIsOpen] = React.useState(false);
-     const [data, setData] = useState<any>()
+     const [data, setData] = useState()
 
      function openModal() {
           setIsOpen(true);
@@ -33,14 +34,14 @@ const Category = ({ work }: any) => {
                     <PageHeader title={work?.title} subTitle={work?.title} />
                     <div className='mt-10 flex flex-col gap-10 md:gap-20'>
                          {
-                              sortedData?.map((item: any, idx: number) => (
+                              sortedData?.map((item, idx) => (
                                    <div key={idx}>
                                         <div className='text-xl mb-7 flex gap-1'>
-                                             <div dangerouslySetInnerHTML={{ __html: item?.caption_info }} />
+                                             <BlockContent blocks={item?.detail} />
                                         </div>
                                         <div className={`grid gap-3 md:gap-5 grid-cols-2 ${item?.imageslist.length > 2 ? item?.imageslist.length > 4 ? 'md:grid-cols-4' : `md:grid-cols-${item?.imageslist.length}` : 'md:grid-cols-3'}`}>
                                              {
-                                                  item?.imageslist?.map((img: any, i: number) => (
+                                                  item?.imageslist?.map((img, i) => (
                                                        <div key={i} onClick={()=>{openModal(); setData(item)}} > <Image src={urlForImage(img?.image?.asset?._ref).width(306).url()} alt={item.title} width={440} height={600} className='w-full h-full object-cover' /></div>
                                                   ))
                                              }
@@ -78,7 +79,7 @@ const customStyles = {
      },
 };
 
-export async function getServerSideProps(pageContext: any) {
+export async function getServerSideProps(pageContext) {
      const slug = pageContext.query.slug;
      const work = await client.fetch(singleWork, { slug });
      if (work?.length < 1) {

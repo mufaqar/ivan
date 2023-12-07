@@ -16,7 +16,7 @@ const Footer = () => {
 
   return (
     <>
-      <footer className="md:grid grid-cols-2 bg-yellow p-4 pt-10 mt-32">
+      <footer className="md:grid grid-cols-2  p-4 pt-10 mt-32">
         <div>
           <p>
             For inquiries or more info, please <button onClick={openModal} className="underline">
