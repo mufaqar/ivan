@@ -36,7 +36,7 @@ const Category = ({ work }) => {
                          {
                               sortedData?.map((item, idx) => (
                                    <div key={idx}>
-                                        <div className='text-xl mb-7 flex gap-1'>
+                                        <div className='text-xl mb-7 flex gap-1 editor'>
                                              <BlockContent blocks={item?.detail} />
                                         </div>
                                         <div className={`grid gap-3 md:gap-5 grid-cols-2 ${item?.imageslist.length > 2 ? item?.imageslist.length > 4 ? 'md:grid-cols-4' : `md:grid-cols-${item?.imageslist.length}` : 'md:grid-cols-3'}`}>

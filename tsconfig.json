@@ -17,6 +17,6 @@
       "@/*": ["./src/*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "src/pages/work/index.jsx", "src/pages/[slug]/index.jsx"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "src/pages/work/index.jsx", "src/pages/[slug]/index.jsx", "src/pages/info/index.jsx", "src/components/cv/Skill.jsx"],
   "exclude": ["node_modules"]
 }

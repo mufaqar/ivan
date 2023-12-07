@@ -44,3 +44,29 @@ dody, html{
 .ReactModal__Overlay{
      z-index: 111;
 }
+
+.editor p{
+     margin-bottom: 10px;
+}
+.editor li{
+     margin-bottom: 5px;
+}
+.editor strong{
+     font-weight: 800;
+}
+.editor h3{
+     font-size: 2rem;
+     font-weight: 600;
+}
+.editor h4{
+     font-size: 1.6rem;
+     font-weight: 600;
+}
+.editor h5{
+     font-size: 1.4rem;
+     font-weight: 600;
+}
+.editor h6{
+     font-size: 1.2rem;
+     font-weight: 600;
+}
