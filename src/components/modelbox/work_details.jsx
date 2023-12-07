@@ -25,7 +25,7 @@ const WorkDetails = ({ closeModal, data }) => {
           <RxCross2 />
         </button>
         <div className="z-50 w-full h-full">
-          <div className="flex flex-col bottom-7 justify-end md:ml-20 z-[100] absolute md:bottom-52 md:-left-7 p-4 md:p-7">
+          <div className="flex flex-col bottom-7 justify-end md:ml-16 z-[100] absolute md:bottom-40 p-4 md:p-7">
             <div className="text-4xl mb-4 md:mb-4 flex gap-2">
               <button onClick={() => slider?.current?.slickPrev()}>
                 <BsArrowLeftCircleFill />
@@ -38,7 +38,7 @@ const WorkDetails = ({ closeModal, data }) => {
           <Slider {...settings} ref={slider}>
             {data?.imageslist?.map((item, id) => (
               <div className="!grid md:grid-cols-2" key={id}>
-                <div className="p-4 pb-0 md:pl-20 flex md:justify-center md:justify-end items-center flex-col">
+                <div className="p-4 pb-0 flex md:justify-center lg:justify-end md:ml-20 items-start flex-col">
                   <BlockContent blocks={item?.info} />
                 </div>
                 <div className="flex justify-start md:justify-end items-center flex-col h-full mt-[4%]">
