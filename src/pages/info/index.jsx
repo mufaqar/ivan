@@ -17,8 +17,7 @@ const Htitle =
 const Info = ({ allInfo }) => {
   const [openCV, setOpenCV] = useState(false);
   const [expand, setExpand] = useState(true);
-  const { Features, cv, cvbio, education, cvsection, info, title } = allInfo[0];
-
+  const { Features, cv, cvbio, education, cvsections, info, title } = allInfo[0];
   return (
     <div className="bg-yellow">
       <Header title={Htitle} />
@@ -66,7 +65,7 @@ const Info = ({ allInfo }) => {
 
               <div className="text-xl mb-2 editor">
 
-              { cvsection.map((f, idx) => <CVSections data={f} key={idx} />)}
+              { cvsections.map((f, idx) => <CVSections data={f} key={idx} />)}
 
               
               </div>

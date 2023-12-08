@@ -68,15 +68,20 @@ export default {
 
     {
       title: 'CV Sections',
-      name: 'cvsection',
+      name: 'cvsections',
       type: 'array',
       of: [
         {
           type: 'object',
           fields: [
             {
-              name: 'cvsection_name',
-              title: 'CV Section Name',
+              name: 'title',
+              type: 'string',
+              title: 'Title',
+            },
+            {
+              name: 'feature_name',
+              title: 'Feature Name',
               type: 'array',
               of: [
                 {
@@ -89,7 +94,11 @@ export default {
                       type: 'text',
                       name: 'alt',
                       title: 'Alternative text',
-                      description: ``,
+                      description: `Some of your visitors cannot see images, 
+                                      be they blind, color-blind, low-sighted; 
+                                      alternative text is of great help for those 
+                                      people that can rely on it to have a good idea of 
+                                      what\'s on your page.`,
                       options: {
                         isHighlighted: true
                       }
@@ -98,13 +107,13 @@ export default {
                 },
               ]
 
-
-
-            },
+            }
           ]
         }
       ]
     },
+
+
 
     {
       title: 'Features',
@@ -182,5 +191,10 @@ export default {
         }
       ]
     },
+
+
+
   ]
 }
+
+

@@ -1,7 +1,7 @@
 import React from 'react'
 import BlockContent from "@sanity/block-content-to-react";
 
-const Skill = ({data}) => {
+const Skill = ({data}) => {  
   return (
     <>
           <div className='grid grid-cols-1 md:grid-cols-3 md:gap-10 gap-6 py-10 md:py-20 border-b'>
