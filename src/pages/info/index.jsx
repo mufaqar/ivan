@@ -65,7 +65,7 @@ const Info = ({ allInfo }) => {
 
               <div className="text-xl mb-2 editor">
 
-              { cvsections.map((f, idx) => <CVSections data={f} key={idx} />)}
+              { openCV &&  cvsections.map((f, idx) => <CVSections data={f} key={idx} />)}
 
               
               </div>
