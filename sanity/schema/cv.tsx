@@ -66,6 +66,25 @@ export default {
       ]
     },
     {
+      title: 'CV Data',
+      name: 'cvdata',
+      type: 'array',
+      of: [
+        {
+          type: 'object',
+          fields: [
+            {
+              name: 'data_info',
+              title: 'Section Info',
+              description: "write complete detail about CV",
+              type: 'string',
+            },
+          ]
+        }
+      ]
+    },
+    
+    {
       title: 'Features',
       name: 'Features',
       type: 'array',
