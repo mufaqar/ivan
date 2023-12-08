@@ -33,7 +33,7 @@ const Info = ({ allInfo }) => {
           <div className="grid grid-cols-2 md:grid-cols-3 gap-6 md:gap-10 py-10 md:py-20 border-b font-light">
             <button className="flex font-semibold items-start gap-2 text-2xl col-span-2 md:col-span-1">
               <span className="flex items-center gap-2">
-                CV {openCV ? <SlArrowUp /> : <SlArrowDown />}
+                CV 
               </span>
             </button>
             <div className="col-span-2 md:col-span-1">
