@@ -65,25 +65,47 @@ export default {
         }
       ]
     },
+
     {
-      title: 'CV Data',
-      name: 'cvdata',
+      title: 'CV Sections',
+      name: 'cvsection',
       type: 'array',
       of: [
         {
           type: 'object',
           fields: [
             {
-              name: 'data_info',
-              title: 'Section Info',
-              description: "write complete detail about CV",
-              type: 'string',
+              name: 'cvsection_name',
+              title: 'CV Section Name',
+              type: 'array',
+              of: [
+                {
+                  type: 'block'
+                },
+                {
+                  type: 'image',
+                  fields: [
+                    {
+                      type: 'text',
+                      name: 'alt',
+                      title: 'Alternative text',
+                      description: ``,
+                      options: {
+                        isHighlighted: true
+                      }
+                    }
+                  ]
+                },
+              ]
+
+
+
             },
           ]
         }
       ]
     },
-    
+
     {
       title: 'Features',
       name: 'Features',

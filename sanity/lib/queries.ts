@@ -48,6 +48,7 @@ export const CV = `*[ _type == "cv"]{
      },
      cvbio,
      education,
+     cvsection,
      info,
      title
 }`

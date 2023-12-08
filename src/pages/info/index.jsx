@@ -1,4 +1,5 @@
 import Skill from '@/components/cv/Skill';
+import CVSections from '@/components/cv/CVSections';
 import Footer from '@/components/footer/footer';
 import Header from '@/components/header/header';
 import Layout from '@/components/layout';
@@ -16,7 +17,7 @@ const Htitle =
 const Info = ({ allInfo }) => {
   const [openCV, setOpenCV] = useState(false);
   const [expand, setExpand] = useState(true);
-  const { Features, cv, cvbio, education, info, title } = allInfo[0];
+  const { Features, cv, cvbio, education, cvsection, info, title } = allInfo[0];
 
   return (
     <div className="bg-yellow">
@@ -64,7 +65,10 @@ const Info = ({ allInfo }) => {
               </button>
 
               <div className="text-xl mb-2 editor">
-                <BlockContent blocks={cvbio} />
+
+              { cvsection.map((f, idx) => <CVSections data={f} key={idx} />)}
+
+              
               </div>
 
              
