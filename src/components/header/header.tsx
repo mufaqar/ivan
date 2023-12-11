@@ -1,23 +1,45 @@
 import Link from 'next/link'
 import { useRouter } from 'next/router'
-import React, { FC, useState } from 'react'
+import React, { FC, useEffect, useState } from 'react'
 
 const Header: FC<any> = ({ title }) => {
      const [mobileNav, setMobileNav] = useState(false)
      const {pathname} = useRouter()
+     const [isSticky, setIsSticky] = useState(false);
+
+     useEffect(() => {
+       const handleScroll = () => {
+         const scrollPosition = window.scrollY;
+         // You can adjust the scroll threshold based on your design
+         const stickyThreshold = 180;
+   
+         // Update the state based on the scroll position
+         setIsSticky(scrollPosition > stickyThreshold);
+       };
+   
+       // Attach the scroll event listener when the component mounts
+       window.addEventListener('scroll', handleScroll);
+   
+       // Cleanup the event listener when the component unmounts
+       return () => {
+         window.removeEventListener('scroll', handleScroll);
+       };
+     }, []); // Empty dependency array ensures the effect runs only once on mount
+   
 
      return (
           <>
-               <header className='md:py-10 py-4 px-4 font-pstime z-50 relative gap-10 flex justify-between items-start'>
+               <header className={`md:py-10 py-4 px-4 font-pstime z-50 relative gap-10 flex justify-between items-start ${isSticky ? 'sticky' : ''} top-0  ${pathname === '/info' ? ' text-main bg-yellow' : ' bg-white'}`}>
                     <Link href="/" className='md:text-[40px] max-w-[600px] md:leading-[50px] md:-mt-4 text-2xl'>
-                         <div dangerouslySetInnerHTML={{ __html: title }} />
-                         {!title && 'Ivan Iannoli'}
+                           <div className={`one ${isSticky ? 'hidden' : ''}`} dangerouslySetInnerHTML={{ __html: title }} /> 
+                       
+                         <div className={`one ${!isSticky ? 'hidden' : 'block'}`} > Ivan Iannoli </div>
                     </Link>
                     <ul className='text-[28px] md:flex items-center gap-4 hidden'>
                          <li className={`hover:underline ${pathname.replace('/', '') === 'work' && 'underline'}`}><Link href="/work">Work</Link></li>
                          <li className={`hover:underline ${pathname.replace('/', '') === 'info' && 'underline'}`}><Link href="/info">Info</Link></li>
                     </ul>
-                    <div className={` ${pathname.replace('/', '') === 'info' ? 'bg-main text-yellow' : 'bg-yellow'} h-12 px-2 z-50 rounded-full md:hidden flex flex-col items-center justify-center`} onClick={() => setMobileNav(!mobileNav)}>
+                    <div className={` ${pathname.replace('/', '') === 'info' ? 'bg-main text-yellow' : '!bg-yellow'} h-12 px-2 z-50 rounded-full md:hidden flex flex-col items-center justify-center`} onClick={() => setMobileNav(!mobileNav)}>
                          {
                               mobileNav ? <button className='pl-1 pr-1'>
                                    <div className={`p-[1px] w-6  -rotate-45 ${pathname.replace('/', '') === 'info' ? 'bg-yellow' : 'bg-main' } `} />
