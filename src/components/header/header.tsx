@@ -34,7 +34,7 @@ const Header: FC<any> = ({ title }) => {
                            <div className={`${isSticky ? 'hidden' : ''}`} dangerouslySetInnerHTML={{ __html: title }} />
                            <div className={`${!isSticky ? 'hidden' : 'block'}`} > Ivan Iannoli </div>
                     </Link>
-                    <ul className='text-[28px] md:flex items-center gap-4 hidden'>
+                    <ul className='text-[28px]  md:flex items-center gap-4 hidden tracking-[0.04em]'>
                          <li className={`hover:underline ${pathname.replace('/', '') === 'work' && 'underline'}`}><Link href="/work">Work</Link></li>
                          <li className={`hover:underline ${pathname.replace('/', '') === 'info' && 'underline'}`}><Link href="/info">Info</Link></li>
                     </ul>
