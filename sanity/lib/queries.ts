@@ -1,6 +1,9 @@
 export const featurePosts = `*[ _type == "featurepost"]{
      _createdAt,
      _updatedAt,
+     homebox,
+     newsbox1,
+     newsbox2,
      top_works[]->{
           title,
           slug,

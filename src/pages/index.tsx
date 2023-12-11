@@ -7,21 +7,21 @@ import { client } from '../../sanity/lib/client'
 import { featurePosts } from '../../sanity/lib/queries'
 import { urlForImage } from '../../sanity/lib/image'
 
+
 var headerTitle = 'Ivan Iannoli is an <u>artist</u>, <u>designer</u>, and creative producer in San Francisco.'
 
-export default function Home({featurePostRes}:any) {
+export default function Home({ featurePostRes }: any) {
+
   return (
     <>
       <Header title={headerTitle} />
       <Layout>
-        <div className='w-full hidden mt-40 md:flex justify-end text-xl grid grid-cols-2 gap-7'>
-          <div><p>Updates and news here timely updates and <u>ability to do links, etc</u>.</p></div>
-          <div><p>Updates and news here timely updates and <u>ability to do links, etc</u>.</p></div>
-
-
+        <div className='w-full hidden mt-40 justify-end text-xl md:flex'>
+          <div className='grid grid-cols-2 gap-7 w-1/2'>
+            <div ><p>Updates1 and news here timely updates and <u>ability to do links, etc</u> Updates and news here timely updates and <u>ability to do links, etc</u>.</p></div>
+            <div><p>Updates and news here timely updates and <u>ability to do links, etc</u> Updates and news here timely updates and <u>ability to do links, etc</u>.</p></div>
+          </div>
         </div>
-
-
         <section className='md:mb-40 mb-20 mt-20'>
           <div className='grid grid-cols-2 justify-between gap-4 md:gap-20 gap-y-10'>
             <Design
@@ -83,10 +83,10 @@ export default function Home({featurePostRes}:any) {
           />
           <div className='flex mt-6 md:mt-0 md:justify-end'>
             <Design
-             title={featurePostRes[0].bottom_works[2].title}
-             tag={featurePostRes[0].bottom_works[2].tags}
-             image={urlForImage(featurePostRes[0].bottom_works[2]?.image.asset._ref).width(306).url()}
-             link={featurePostRes[0].bottom_works[2].slug.current}
+              title={featurePostRes[0].bottom_works[2].title}
+              tag={featurePostRes[0].bottom_works[2].tags}
+              image={urlForImage(featurePostRes[0].bottom_works[2]?.image.asset._ref).width(306).url()}
+              link={featurePostRes[0].bottom_works[2].slug.current}
               calssName="md:mr-20"
             />
           </div>

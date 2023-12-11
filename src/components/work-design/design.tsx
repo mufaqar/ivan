@@ -29,7 +29,7 @@ const Design: FC<IDesign> = ({ calssName, title, tag, image, video, link, imageW
                <ul className='text-gray flex gap-1 text-[13px]'>
                     {
                          tag?.map((t:any, idx) => (
-                              <li key={idx} className='capitalize'>{t.name}{tag.length !== idx + 1 && ','}</li>
+                              <li key={idx} className='uppercase'>{t.name}{tag.length !== idx + 1 && ','}</li>
                          ))
                     }
                </ul>
