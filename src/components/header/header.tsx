@@ -30,10 +30,9 @@ const Header: FC<any> = ({ title }) => {
      return (
           <>
                <header className={`md:py-10 py-4 px-4 font-pstime z-50 relative gap-10 flex justify-between items-start ${isSticky ? 'sticky' : ''} top-0  ${pathname === '/info' ? ' text-main bg-yellow' : ' bg-white'}`}>
-                    <Link href="/" className='md:text-[40px] max-w-[600px] md:leading-[50px] md:-mt-4 text-2xl'>
-                           <div className={`one ${isSticky ? 'hidden' : ''}`} dangerouslySetInnerHTML={{ __html: title }} /> 
-                       
-                         <div className={`one ${!isSticky ? 'hidden' : 'block'}`} > Ivan Iannoli </div>
+                    <Link href="/" className='md:text-[32px] max-w-[500px] md:leading-[42px] md:-mt-4 text-2xl'>
+                           <div className={`one ${isSticky ? 'hidden' : ''}`} dangerouslySetInnerHTML={{ __html: title }} />
+                           <div className={`one ${!isSticky ? 'hidden' : 'block'}`} > Ivan Iannoli </div>
                     </Link>
                     <ul className='text-[28px] md:flex items-center gap-4 hidden'>
                          <li className={`hover:underline ${pathname.replace('/', '') === 'work' && 'underline'}`}><Link href="/work">Work</Link></li>
