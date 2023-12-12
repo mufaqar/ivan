@@ -9,7 +9,7 @@ import { urlForImage } from '../../sanity/lib/image'
 import BlockContent from '@sanity/block-content-to-react';
 
 
-var headerTitle = 'Ivan Iannoli is an <u>artist</u>, <u>designer</u>, and creative producer in San Francisco.'
+var headerTitle = 'is an <u>artist</u>, <u>designer</u>, and creative producer in San Francisco.'
 
 export default function Home({ featurePostRes }) {
 

@@ -29,11 +29,10 @@ const Header: FC<any> = ({ title }) => {
 
      return (
           <>
-               <header className={`md:py-10 py-4 px-4 font-pstime z-50 relative gap-10 flex justify-between items-start ${isSticky ? 'sticky' : ''} top-0  ${pathname === '/info' ? ' text-main bg-yellow' : ' bg-white'}`}>
+               <header className={`md:py-10 py-4 px-4 font-pstime z-50 h-[114px] relative gap-10 flex justify-between items-start ${isSticky ? 'sticky ' : ''} top-0  ${pathname === '/info' ? ' text-main bg-yellow' : ' bg-white'}`}>
                     <Link href="/" className='md:text-[32px] max-w-[500px] md:leading-[42px] md:-mt-4 text-2xl tracking-[0.04em] '>
                            <span>Ivan Iannoli </span>
-                           <div className={`inline ${isSticky ? 'hidden' : ''}`} dangerouslySetInnerHTML={{ __html: title }} />
-                           
+                           <div className={`inline ${isSticky ? 'opacity-0' : ''}`} dangerouslySetInnerHTML={{ __html: title }} />
                     </Link>
                     <ul className='text-[28px]  md:flex items-center gap-8 hidden tracking-[0.04em]   smooth'>
                          <li className={`hover:border-black border-b-2 border-transparent leading-[32px] ${pathname.replace('/', '') === 'work' && '!border-black '}`}><Link href="/work">Work</Link></li>

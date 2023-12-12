@@ -22,7 +22,7 @@ const Info = ({ allInfo }) => {
     <div className="bg-yellow">
       <Header title={Htitle} />
       <Layout>
-        <section className="py-28 border-b">
+        <section className="py-28 mt-16 border-b">
           <h2 className="font-pstime text-4xl md:text-5xl lg:text-6xl">
             {title}
           </h2>
