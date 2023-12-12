@@ -1,11 +1,12 @@
 import Link from 'next/link'
 import React from 'react'
 import { BsArrowRight } from "react-icons/bs";
+import BlockContent from '@sanity/block-content-to-react';
 
-const Inquire = () => {
+const Inquire = ({data}) => {
   return (
     <section>
-          <h2 className='font-pstime text-3xl md:text-4xl lg:text-6xl'>Longer form blurb about Ivan here. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Dui faucibus in ornare quam. Ut faucibus pulvinar elementum integer. </h2>
+          <div className='font-pstime text-3xl md:text-4xl lg:text-6xl'>  <BlockContent blocks={data} /></div>
           <Link href="#" className='font-pstime hover:text-gray text-2xl flex items-center gap-1 w-full justify-end mt-10 md:pr-10'>INQUIRE <BsArrowRight /></Link>
     </section>
   )

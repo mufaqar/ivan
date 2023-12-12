@@ -6,11 +6,12 @@ import Design from '@/components/work-design/design'
 import { client } from '../../sanity/lib/client'
 import { featurePosts } from '../../sanity/lib/queries'
 import { urlForImage } from '../../sanity/lib/image'
+import BlockContent from '@sanity/block-content-to-react';
 
 
 var headerTitle = 'Ivan Iannoli is an <u>artist</u>, <u>designer</u>, and creative producer in San Francisco.'
 
-export default function Home({ featurePostRes }: any) {
+export default function Home({ featurePostRes }) {
 
   return (
     <>
@@ -18,8 +19,12 @@ export default function Home({ featurePostRes }: any) {
       <Layout>
         <div className='w-full hidden mt-40 justify-end text-xl md:flex'>
           <div className='grid grid-cols-2 gap-7 w-1/2'>
-            <div ><p>Updates1 and news here timely updates and <u>ability to do links, etc</u> Updates and news here timely updates and <u>ability to do links, etc</u>.</p></div>
-            <div><p>Updates and news here timely updates and <u>ability to do links, etc</u> Updates and news here timely updates and <u>ability to do links, etc</u>.</p></div>
+            <div ><div className="text-xl mb-2 editor">
+                <BlockContent blocks={featurePostRes[0].newsbox1} />
+              </div></div>
+            <div><div className="text-xl mb-2 editor">
+                <BlockContent blocks={featurePostRes[0].newsbox2} />
+              </div></div>
           </div>
         </div>
         <section className='md:mb-40 mb-20 mt-20'>
@@ -61,7 +66,7 @@ export default function Home({ featurePostRes }: any) {
             </div>
           </div>
         </section>
-        <Inquire />
+        <Inquire data={featurePostRes[0].homebox}  />
 
         <div className='flex justify-center mt-10 md:mt-20'>
           <Design

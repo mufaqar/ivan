@@ -11,7 +11,7 @@ const Header: FC<any> = ({ title }) => {
        const handleScroll = () => {
          const scrollPosition = window.scrollY;
          // You can adjust the scroll threshold based on your design
-         const stickyThreshold = 180;
+         const stickyThreshold = 1;
    
          // Update the state based on the scroll position
          setIsSticky(scrollPosition > stickyThreshold);
@@ -30,13 +30,14 @@ const Header: FC<any> = ({ title }) => {
      return (
           <>
                <header className={`md:py-10 py-4 px-4 font-pstime z-50 relative gap-10 flex justify-between items-start ${isSticky ? 'sticky' : ''} top-0  ${pathname === '/info' ? ' text-main bg-yellow' : ' bg-white'}`}>
-                    <Link href="/" className='md:text-[32px] max-w-[500px] md:leading-[42px] md:-mt-4 text-2xl tracking-[0.04em]'>
-                           <div className={`${isSticky ? 'hidden' : ''}`} dangerouslySetInnerHTML={{ __html: title }} />
-                           <div className={`${!isSticky ? 'hidden' : 'block'}`} > Ivan Iannoli </div>
+                    <Link href="/" className='md:text-[32px] max-w-[500px] md:leading-[42px] md:-mt-4 text-2xl tracking-[0.04em] '>
+                           <span>Ivan Iannoli </span>
+                           <div className={`inline ${isSticky ? 'hidden' : ''}`} dangerouslySetInnerHTML={{ __html: title }} />
+                           
                     </Link>
-                    <ul className='text-[28px]  md:flex items-center gap-4 hidden tracking-[0.04em]'>
-                         <li className={`hover:underline ${pathname.replace('/', '') === 'work' && 'underline'}`}><Link href="/work">Work</Link></li>
-                         <li className={`hover:underline ${pathname.replace('/', '') === 'info' && 'underline'}`}><Link href="/info">Info</Link></li>
+                    <ul className='text-[28px]  md:flex items-center gap-8 hidden tracking-[0.04em]   smooth'>
+                         <li className={`hover:border-black border-b-2 border-transparent leading-[32px] ${pathname.replace('/', '') === 'work' && '!border-black '}`}><Link href="/work">Work</Link></li>
+                         <li className={`hover:border-black border-b-2 border-transparent leading-[32px] ${pathname.replace('/', '') === 'info' && '!border-black '}`}><Link href="/info">Info</Link></li>
                     </ul>
                     <div className={` ${pathname.replace('/', '') === 'info' ? 'bg-main text-yellow' : '!bg-yellow'} h-12 px-2 z-50 rounded-full md:hidden flex flex-col items-center justify-center`} onClick={() => setMobileNav(!mobileNav)}>
                          {
