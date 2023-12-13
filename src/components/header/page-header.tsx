@@ -5,7 +5,7 @@ interface IPageHeader {
      subTitle: string
 }
 
-const PageHeader:FC <IPageHeader> = ({title,subTitle}) => {
+const PageHeader:FC <IPageHeader> = ({title, subTitle}) => {
   return (
     <section className='flex flex-col justify-end items-center pt-[74px] pb-28'>
           <h1 className='text-4xl font-pstime font-light'>{title}</h1>
