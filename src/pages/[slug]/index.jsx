@@ -31,7 +31,7 @@ const Category = ({ work }) => {
           <>
                <Header />
                <Layout>
-                    <PageHeader title={work?.title} subTitle={work?.title} />
+                    <PageHeader title={work?.title}  />
                     <div className='mt-10 flex flex-col gap-10 md:gap-20'>
                          {
                               sortedData?.map((item, idx) => (

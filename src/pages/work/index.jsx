@@ -31,7 +31,7 @@ const Work = ({ allWorks, allTags }) => {
       <Layout>
         <PageHeader
           title="All Work"
-          subTitle="Small additional info/subtitle"
+          subTitle=""
         />
         <ul className="flex items-center gap-3 font-light flex-wrap  xl:container mx-auto">
           <li

@@ -69,8 +69,14 @@ html {
   font-weight: 600;
 }
 
-.smooth {
+/* .smooth {
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
   -moz-osx-font-smoothing: grayscale;
+} */
+
+
+*{
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }

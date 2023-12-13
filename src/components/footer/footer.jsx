@@ -16,15 +16,15 @@ const Footer = () => {
 
   return (
     <>
-      <footer className="md:grid grid-cols-2  p-4 pt-10 mt-32 border-t border-black">
+      <footer className="md:grid grid-cols-2  p-4 pt-9 mt-32 border-t border-black">
         <div>
-          <p>
+          <p className="font-light text-lg">
             For inquiries or more info, please <button onClick={openModal} className="underline">
               send me a message
             </button>
             .
           </p>
-          <ul className="flex items-center gap-2 text-gray text-[12px] font-light mt-16">
+          <ul className="flex items-center gap-2 text-gray text-[10px] uppercase font-light mt-[27px]">
             <li className="hover:underline">
               <Link href="">Privacy</Link>
             </li>
@@ -38,8 +38,8 @@ const Footer = () => {
           </ul>
         </div>
         <div className=" md:mt-0 flex justify-end items-start">
-          <ul className="flex items-end gap-3 text-sx">
-          <li className="hover:underline capitalize">
+          <ul className="flex items-end gap-8 font-light text-lg">
+            <li className="hover:underline capitalize">
               <Link href="">Email</Link>
             </li>
             <li className="hover:underline capitalize">
@@ -69,7 +69,7 @@ const Footer = () => {
 
 export default Footer;
 
-const customStyles = {
+export const customStyles = {
   content: {
     top: "50%",
     left: "50%",

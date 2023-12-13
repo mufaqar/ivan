@@ -29,8 +29,8 @@ const Header: FC<any> = ({ title }) => {
 
      return (
           <>
-               <header className={`md:py-10 py-4 px-4 font-pstime z-50 h-[114px] relative gap-10 flex justify-between items-start ${isSticky ? 'sticky ' : ''} top-0  ${pathname === '/info' ? ' text-main bg-yellow' : ' bg-white'}`}>
-                    <Link href="/" className='md:text-[32px] max-w-[500px] md:leading-[42px] md:-mt-4 text-2xl tracking-[0.04em] '>
+               <header className={`md:py-8 py-4 px-4 font-pstime z-50 h-[96px] relative gap-10 flex justify-between items-start ${isSticky ? 'sticky ' : ''} top-0  ${pathname === '/info' ? ' text-main bg-yellow' : ' bg-white'}`}>
+                    <Link href="/" className='md:text-[32px] max-w-[500px] md:leading-[42px] md:-mt-1 text-2xl tracking-[0.04em] '>
                            <span>Ivan Iannoli </span>
                            <div className={`inline ${isSticky ? 'opacity-0' : ''}`} dangerouslySetInnerHTML={{ __html: title }} />
                     </Link>
