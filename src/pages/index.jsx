@@ -19,10 +19,10 @@ export default function Home({ featurePostRes }) {
       <Layout>
         <div className='w-full hidden justify-end mt-[166px] text-xl md:flex'>
           <div className='grid grid-cols-2 gap-7 w-1/2'>
-            <div ><div className="text-xl mb-2 editor">
+            <div ><div className="text-[15px] mb-2 editor">
                 <BlockContent blocks={featurePostRes[0].newsbox1} />
               </div></div>
-            <div><div className="text-xl mb-2 editor">
+            <div><div className="text-[15px] mb-2 editor">
                 <BlockContent blocks={featurePostRes[0].newsbox2} />
               </div></div>
           </div>
