@@ -47,7 +47,7 @@ const Header: FC<any> = ({ title }) => {
 
      return (
           <>
-               <header className={`md:py-5 py-4 px-4  font-pstime z-20 relative gap-10 flex justify-between items-start ${isSticky ? 'sticky ' : ''} top-0  ${pathname === '/info' ? ' text-main bg-yellow' : ' bg-transparent'}`}>
+               <header className={`md:py-5 py-4 px-4  font-pstime z-20 relative gap-10 flex justify-between items-start ${isSticky ? 'sticky ' : ''} top-0  ${pathname === '/info' ? ' text-main bg-transparent' : ' bg-transparent'}`}>
                     <Link href="/" className='md:text-[32px] max-w-[500px] md:leading-[42px] md:-mt-1 text-2xl tracking-[0.04em] '>
                          <div className=' pt-5 z-50'>Ivan Iannoli </div>
                     </Link>
