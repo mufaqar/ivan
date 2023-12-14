@@ -4,50 +4,67 @@ import React, { FC, useEffect, useState } from 'react'
 
 const Header: FC<any> = ({ title }) => {
      const [mobileNav, setMobileNav] = useState(false)
-     const {pathname} = useRouter()
+     const { pathname } = useRouter()
      const [isSticky, setIsSticky] = useState(false);
 
      useEffect(() => {
-       const handleScroll = () => {
-         const scrollPosition = window.scrollY;
-         // You can adjust the scroll threshold based on your design
-         const stickyThreshold = 1;
-   
-         // Update the state based on the scroll position
-         setIsSticky(scrollPosition > stickyThreshold);
-       };
-   
-       // Attach the scroll event listener when the component mounts
-       window.addEventListener('scroll', handleScroll);
-   
-       // Cleanup the event listener when the component unmounts
-       return () => {
-         window.removeEventListener('scroll', handleScroll);
-       };
+          const handleScroll = () => {
+               const scrollPosition = window.scrollY;
+               // You can adjust the scroll threshold based on your design
+               const stickyThreshold = 1;
+
+               // Update the state based on the scroll position
+               setIsSticky(scrollPosition > stickyThreshold);
+          };
+
+          // Attach the scroll event listener when the component mounts
+          window.addEventListener('scroll', handleScroll);
+
+          // Cleanup the event listener when the component unmounts
+          return () => {
+               window.removeEventListener('scroll', handleScroll);
+          };
      }, []); // Empty dependency array ensures the effect runs only once on mount
-   
+
+     const [modifiedTitle, setModifiedTitle] = useState('');
+
+     useEffect(() => {
+          // Parsing the headerTitle string to access the span tag content
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(title, 'text/html');
+          const spanElement = htmlDoc.querySelector('span');
+
+          // Modify the styles of the span tag content
+          if (spanElement) {
+               spanElement.style.opacity = '0'; // Example: Change color to red
+               // Add other styles as needed
+               const modifiedSpan = spanElement.outerHTML;
+               // Reinsert the modified span back into the original title
+               const newTitle = title.replace(/<span>.*?<\/span>/, modifiedSpan);
+               setModifiedTitle(newTitle);
+          }
+     }, []);
 
      return (
           <>
-               <header className={`md:py-8 py-4 px-4 font-pstime z-50 h-[96px] relative gap-10 flex justify-between items-start ${isSticky ? 'sticky ' : ''} top-0  ${pathname === '/info' ? ' text-main bg-yellow' : ' bg-white'}`}>
+               <header className={`md:py-5 py-4 px-4  font-pstime z-20 relative gap-10 flex justify-between items-start ${isSticky ? 'sticky ' : ''} top-0  ${pathname === '/info' ? ' text-main bg-yellow' : ' bg-transparent'}`}>
                     <Link href="/" className='md:text-[32px] max-w-[500px] md:leading-[42px] md:-mt-1 text-2xl tracking-[0.04em] '>
-                           <span>Ivan Iannoli </span>
-                           <div className={`inline ${isSticky ? 'opacity-0' : ''}`} dangerouslySetInnerHTML={{ __html: title }} />
+                         <div className=' pt-5 z-50'>Ivan Iannoli </div>
                     </Link>
-                    <ul className='text-[28px]  md:flex items-center gap-8 hidden tracking-[0.04em]   smooth'>
+                    <ul className='text-[28px] pt-5 md:flex items-center gap-8 hidden tracking-[0.04em]   smooth'>
                          <li className={`hover:border-black border-b-2 border-transparent leading-[32px] ${pathname.replace('/', '') === 'work' && '!border-black '}`}><Link href="/work">Work</Link></li>
                          <li className={`hover:border-black border-b-2 border-transparent leading-[32px] ${pathname.replace('/', '') === 'info' && '!border-black '}`}><Link href="/info">Info</Link></li>
                     </ul>
                     <div className={` ${pathname.replace('/', '') === 'info' ? 'bg-main text-yellow' : '!bg-yellow'} h-12 px-2 z-50 rounded-full md:hidden flex flex-col items-center justify-center`} onClick={() => setMobileNav(!mobileNav)}>
                          {
                               mobileNav ? <button className='pl-1 pr-1'>
-                                   <div className={`p-[1px] w-6  -rotate-45 ${pathname.replace('/', '') === 'info' ? 'bg-yellow' : 'bg-main' } `} />
-                                   <div className={`p-[1px] w-6 bg-main rotate-45 ${pathname.replace('/', '') === 'info' ? 'bg-yellow' : 'bg-main' } `} />
+                                   <div className={`p-[1px] w-6  -rotate-45 ${pathname.replace('/', '') === 'info' ? 'bg-yellow' : 'bg-main'} `} />
+                                   <div className={`p-[1px] w-6 bg-main rotate-45 ${pathname.replace('/', '') === 'info' ? 'bg-yellow' : 'bg-main'} `} />
                               </button> : <button className='uppercase text-[10px] font-abcwhyte '>Menu</button>
                          }
                     </div>
-
                </header >
+               <div className={` md:text-[32px] px-4 font-pstime z-30 absolute top-10 max-w-[600px] md:leading-[42px] md:-mt-1 text-2xl tracking-[0.04em] ${isSticky ? 'opacity-1' : ''}`} dangerouslySetInnerHTML={{ __html: modifiedTitle }} />
                <MobileNavMenu mobileNav={mobileNav} />
           </>
      )

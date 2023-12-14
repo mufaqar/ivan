@@ -9,7 +9,7 @@ import { urlForImage } from '../../sanity/lib/image'
 import BlockContent from '@sanity/block-content-to-react';
 
 
-var headerTitle = 'is an <u>artist</u>, <u>designer</u>, and creative producer in San Francisco.'
+var headerTitle = '<span>Ivan Iannoli</span> is an <u>artist</u>, <u>designer</u>, and creative producer in San Francisco.'
 
 export default function Home({ featurePostRes }) {
 
@@ -17,7 +17,7 @@ export default function Home({ featurePostRes }) {
     <>
       <Header title={headerTitle} />
       <Layout>
-        <div className='w-full hidden mt-40 justify-end text-xl md:flex'>
+        <div className='w-full hidden justify-end mt-[166px] text-xl md:flex'>
           <div className='grid grid-cols-2 gap-7 w-1/2'>
             <div ><div className="text-xl mb-2 editor">
                 <BlockContent blocks={featurePostRes[0].newsbox1} />
@@ -28,7 +28,7 @@ export default function Home({ featurePostRes }) {
           </div>
         </div>
         <section className='md:mb-40 mb-20 mt-20'>
-          <div className='grid grid-cols-2 justify-between gap-4 md:gap-20 gap-y-10'>
+          <div className='grid grid-cols-2 justify-between items-center gap-4 md:gap-20 gap-y-10'>
             <Design
               title={featurePostRes[0].top_works[0].title}
               tag={featurePostRes[0].top_works[0].tags}
