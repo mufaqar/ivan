@@ -12,7 +12,7 @@ import { CV } from '../../../sanity/lib/queries';
 import BlockContent from '@sanity/block-content-to-react';
 
 const Htitle =
-  'lives and works in SF* and can be reached at 555-555-5555, <u>email@iannoli.com</u>, <u>@ivaniannoli</u>';
+  '<span>Ivan Iannoli</span> lives and works in SF* and can be reached at 555-555-5555, <u>email@iannoli.com</u>, <u>@ivaniannoli</u>';
 
 const Info = ({ allInfo }) => {
   const [openCV, setOpenCV] = useState(false);
