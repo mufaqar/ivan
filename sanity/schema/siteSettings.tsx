@@ -3,6 +3,17 @@ export default {
      title: 'Site Settings',
      type: 'document',
      fields: [
+      {
+        name: 'name',
+        type: 'string',
+        title: 'Name',
+        readOnly: ({currentUser}:any) => {
+          return true
+        },
+        options: {
+          default: 'Site Setting',
+        },
+      },
        {
         title: "Footer Nav Links",
         type: "array",

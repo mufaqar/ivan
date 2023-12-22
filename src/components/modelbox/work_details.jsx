@@ -22,9 +22,9 @@ const WorkDetails = ({ closeModal, data }) => {
 
     const handleKeyDown = (event) => {
       if (event.key === 'ArrowLeft') {
-        sliderElement.slickPrev(); // Go to previous slide on left arrow key press
+        sliderElement.slickPrev();
       } else if (event.key === 'ArrowRight') {
-        sliderElement.slickNext(); // Go to next slide on right arrow key press
+        sliderElement.slickNext();
       }
     };
     // Attach event listener for keydown
