@@ -33,7 +33,7 @@ const WorkDetails = ({ closeModal, data }) => {
       // Clean up event listener on component unmount
       document.removeEventListener('keydown', handleKeyDown);
     };
-    
+
   }, []);
 
   return (
@@ -45,10 +45,10 @@ const WorkDetails = ({ closeModal, data }) => {
         <div className="z-50 w-full h-full">
           <div className="flex flex-col bottom-7 justify-end md:ml-16 z-[100] absolute md:bottom-0 p-4 md:p-7">
             <div className="text-4xl mb-4 md:mb-4 flex gap-2">
-              <button onClick={() => sliderRef?.current?.slickPrev()} >
+              <button onClick={() => sliderRef?.current?.slickPrev()} className="ring-0 outline-none" >
                 <BsArrowLeftCircleFill />
               </button>
-              <button onClick={() => sliderRef?.current?.slickNext()} >
+              <button onClick={() => sliderRef?.current?.slickNext()} className="ring-0 outline-none">
                 <BsArrowRightCircleFill />
               </button>
             </div>
