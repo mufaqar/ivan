@@ -9,8 +9,7 @@ import { Tags, work } from "../../../sanity/lib/queries";
 import { urlForImage } from "../../../sanity/lib/image";
 import Inquire from "@/components/inquire/inquire";
 
-export const fallbackImage =
-  "image-31c77982dca566e6b1da5d2f5a0059a226764d20-1665x2048-png";
+export const fallbackImage = "image-31c77982dca566e6b1da5d2f5a0059a226764d20-1665x2048-png";
 
 const Work = ({ allWorks, allTags }) => {
   const [tag, setTag] = useState("");

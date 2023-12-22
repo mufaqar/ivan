@@ -15,15 +15,26 @@ const WorkDetails = ({ closeModal, data }) => {
     slidesToScroll: 1,
   };
 
-  const slider = React.useRef(null);
+  const sliderRef = React.useRef(null);
 
-  const handleKeyPress = (event) => {
-    if (event.keyCode === 37) {
-      slider?.current?.slickNext()
-    } else if (event.keyCode === 39) {
-      slider?.current?.slickPrev()
-    }
-  }
+  useEffect(() => {
+    const sliderElement = sliderRef.current;
+
+    const handleKeyDown = (event) => {
+      if (event.key === 'ArrowLeft') {
+        sliderElement.slickPrev(); // Go to previous slide on left arrow key press
+      } else if (event.key === 'ArrowRight') {
+        sliderElement.slickNext(); // Go to next slide on right arrow key press
+      }
+    };
+    // Attach event listener for keydown
+    document.addEventListener('keydown', handleKeyDown);
+    return () => {
+      // Clean up event listener on component unmount
+      document.removeEventListener('keydown', handleKeyDown);
+    };
+    
+  }, []);
 
   return (
     <>
@@ -34,15 +45,15 @@ const WorkDetails = ({ closeModal, data }) => {
         <div className="z-50 w-full h-full">
           <div className="flex flex-col bottom-7 justify-end md:ml-16 z-[100] absolute md:bottom-0 p-4 md:p-7">
             <div className="text-4xl mb-4 md:mb-4 flex gap-2">
-              <button onClick={() => slider?.current?.slickPrev()} onKeyDown={handleKeyPress}>
+              <button onClick={() => sliderRef?.current?.slickPrev()} >
                 <BsArrowLeftCircleFill />
               </button>
-              <button onClick={() => slider?.current?.slickNext()} onKeyDown={handleKeyPress}>
+              <button onClick={() => sliderRef?.current?.slickNext()} >
                 <BsArrowRightCircleFill />
               </button>
             </div>
           </div>
-          <Slider {...settings} ref={slider}>
+          <Slider {...settings} ref={sliderRef} className="outline-none ring-0 border-none">
             {data?.imageslist?.map((item, id) => (
               <div className="!grid md:grid-cols-2" key={id}>
                 <div className="p-4 pb-0 flex md:justify-center pt-12 md:pb-12 md:pt-0 lg:justify-end md:ml-20 items-start flex-col editor">
