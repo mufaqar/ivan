@@ -1,6 +1,7 @@
 export const featurePosts = `*[ _type == "featurepost"]{
      _createdAt,
      _updatedAt,
+     headTitle,
      homebox,
      newsbox1,
      newsbox2,
@@ -44,6 +45,7 @@ export const work = `*[ _type == "works"]{
 
 export const CV = `*[ _type == "cv"]{
      Features,
+     headTitle,
      cv{
           asset->{
                url
@@ -57,3 +59,5 @@ export const CV = `*[ _type == "cv"]{
 }`
 export const Tags = `*[ _type == "tags"]`
 export const singleWork = `*[ _type == "works" && slug.current == $slug][0]`
+
+export const siteSetting = `*[ _type == "siteSettings"][0]`

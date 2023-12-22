@@ -17,6 +17,6 @@
       "@/*": ["./src/*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "src/pages/work/index.jsx", "src/pages/[slug]/index.jsx", "src/pages/info/index.jsx", "src/components/cv/Skill.jsx", "src/pages/index.jsx", "src/components/inquire/inquire.jsx"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "src/pages/work/index.jsx", "src/pages/[slug]/index.jsx", "src/pages/info/index.jsx", "src/components/cv/Skill.jsx", "src/pages/index.jsx", "src/components/inquire/inquire.jsx", "src/components/header/header.jsx"],
   "exclude": ["node_modules"]
 }

@@ -80,3 +80,7 @@ html {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }
+
+.headTitle p{
+  display: inline;
+}

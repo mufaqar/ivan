@@ -15,12 +15,13 @@ const Htitle =
   '<span>Ivan Iannoli</span> lives and works in SF* and can be reached at 555-555-5555, <u>email@iannoli.com</u>, <u>@ivaniannoli</u>';
 
 const Info = ({ allInfo }) => {
+  console.log("🚀 ~ file: index.jsx:18 ~ Info ~ allInfo:", allInfo)
   const [openCV, setOpenCV] = useState(false);
   const [expand, setExpand] = useState(true);
   const { Features, cv, cvbio, education, cvsections, info, title } = allInfo[0];
   return (
     <div className="bg-yellow">
-      <Header title={Htitle} />
+      <Header headTitle={allInfo[0]?.headTitle} />
       <Layout>
         <section className="py-28 mt-16 border-b">
           <h2 className="font-pstime text-4xl md:text-5xl lg:text-6xl">

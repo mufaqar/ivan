@@ -17,19 +17,27 @@ const WorkDetails = ({ closeModal, data }) => {
 
   const slider = React.useRef(null);
 
+  const handleKeyPress = (event) => {
+    if (event.keyCode === 37) {
+      slider?.current?.slickNext()
+    } else if (event.keyCode === 39) {
+      slider?.current?.slickPrev()
+    }
+  }
+
   return (
     <>
-      <div className="w-screen h-screen mx-auto relative border border-gray/30 z-50">
+      <div className="w-screen h-screen mx-auto relative border border-gray/30 z-50 outline-none">
         <button className="absolute text-2xl z-[101] bg-yellow rounded-full p-1 md:top-3 top-10 right-3" onClick={closeModal}>
           <RxCross2 />
         </button>
         <div className="z-50 w-full h-full">
           <div className="flex flex-col bottom-7 justify-end md:ml-16 z-[100] absolute md:bottom-0 p-4 md:p-7">
             <div className="text-4xl mb-4 md:mb-4 flex gap-2">
-              <button onClick={() => slider?.current?.slickPrev()}>
+              <button onClick={() => slider?.current?.slickPrev()} onKeyDown={handleKeyPress}>
                 <BsArrowLeftCircleFill />
               </button>
-              <button onClick={() => slider?.current?.slickNext()}>
+              <button onClick={() => slider?.current?.slickNext()} onKeyDown={handleKeyPress}>
                 <BsArrowRightCircleFill />
               </button>
             </div>

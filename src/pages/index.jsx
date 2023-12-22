@@ -9,13 +9,13 @@ import { urlForImage } from '../../sanity/lib/image'
 import BlockContent from '@sanity/block-content-to-react';
 
 
-var headerTitle = '<span>Ivan Iannoli</span> is an <u>artist</u>, <u>designer</u>, and creative producer in San Francisco.'
+// var headerTitle = '<span>Ivan Iannoli</span> is an <u>artist</u>, <u>designer</u>, and creative producer in San Francisco.'
 
 export default function Home({ featurePostRes }) {
 
   return (
     <>
-      <Header title={headerTitle} />
+      <Header headTitle={featurePostRes[0]?.headTitle}/>
       <Layout>
         <div className='w-full hidden justify-end mt-[166px] text-xl md:flex'>
           <div className='grid grid-cols-2 gap-7 w-1/2'>

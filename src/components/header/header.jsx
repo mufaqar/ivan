@@ -1,8 +1,9 @@
 import Link from 'next/link'
 import { useRouter } from 'next/router'
-import React, { FC, useEffect, useState } from 'react'
+import React, { useEffect, useState } from 'react'
+import BlockContent from '@sanity/block-content-to-react';
 
-const Header: FC<any> = ({ title }) => {
+const Header = ({ title, headTitle }) => {
      const [mobileNav, setMobileNav] = useState(false)
      const { pathname } = useRouter()
      const [isSticky, setIsSticky] = useState(false);
@@ -26,24 +27,24 @@ const Header: FC<any> = ({ title }) => {
           };
      }, []); // Empty dependency array ensures the effect runs only once on mount
 
-     const [modifiedTitle, setModifiedTitle] = useState('');
 
-     useEffect(() => {
-          // Parsing the headerTitle string to access the span tag content
-          const parser = new DOMParser();
-          const htmlDoc = parser.parseFromString(title, 'text/html');
-          const spanElement = htmlDoc.querySelector('span');
+     // const [modifiedTitle, setModifiedTitle] = useState('');
+     // useEffect(() => {
+     //      // Parsing the headerTitle string to access the span tag content
+     //      const parser = new DOMParser();
+     //      const htmlDoc = parser.parseFromString(title, 'text/html');
+     //      const spanElement = htmlDoc.querySelector('span');
 
-          // Modify the styles of the span tag content
-          if (spanElement) {
-               spanElement.style.opacity = '0'; // Example: Change color to red
-               // Add other styles as needed
-               const modifiedSpan = spanElement.outerHTML;
-               // Reinsert the modified span back into the original title
-               const newTitle = title.replace(/<span>.*?<\/span>/, modifiedSpan);
-               setModifiedTitle(newTitle);
-          }
-     }, []);
+     //      // Modify the styles of the span tag content
+     //      if (spanElement) {
+     //           spanElement.style.opacity = '0'; // Example: Change color to red
+     //           // Add other styles as needed
+     //           const modifiedSpan = spanElement.outerHTML;
+     //           // Reinsert the modified span back into the original title
+     //           const newTitle = title.replace(/<span>.*?<\/span>/, modifiedSpan);
+     //           setModifiedTitle(newTitle);
+     //      }
+     // }, []);
 
      return (
           <>
@@ -64,7 +65,11 @@ const Header: FC<any> = ({ title }) => {
                          }
                     </div>
                </header >
-               <div className={` md:text-[32px] px-4 font-pstime z-30 absolute top-10 max-w-[600px] md:leading-[42px] md:-mt-1 text-2xl tracking-[0.04em] ${isSticky ? 'opacity-1' : ''}`} dangerouslySetInnerHTML={{ __html: modifiedTitle }} />
+               {/* <div className={` md:text-[32px] px-4 font-pstime z-30 absolute top-10 max-w-[600px] md:leading-[42px] md:-mt-1 text-2xl tracking-[0.04em] ${isSticky ? 'opacity-1' : ''}`} dangerouslySetInnerHTML={{ __html: modifiedTitle }} /> */}
+               <div className={`headTitle md:text-[32px] px-4 font-pstime z-30 absolute top-10 max-w-[600px] md:leading-[42px] md:-mt-1 text-2xl tracking-[0.04em] ${isSticky ? 'opacity-1' : ''}`}>
+                         <span className='opacity-0 bg-white'>Ivan Iannoli </span>
+                         <BlockContent blocks={headTitle}/>
+               </div>
                <MobileNavMenu mobileNav={mobileNav} />
           </>
      )
@@ -73,17 +78,7 @@ const Header: FC<any> = ({ title }) => {
 export default Header
 
 
-interface ImobileNavList {
-     name: string,
-     link: string,
-     subNav?: subNav[]
-}
-interface subNav {
-     name: string,
-     link: string,
-}
-
-const MobileNavMenu = ({ mobileNav }: any) => {
+const MobileNavMenu = ({ mobileNav }) => {
      return (
           <nav className={`bg-yellow p-4 absolute transition-all duration-300 ease-in-out w-full ${mobileNav ? 'top-0' : '-top-[150%]'}`}>
                <div className='flex items-center justify-between'>
@@ -91,7 +86,7 @@ const MobileNavMenu = ({ mobileNav }: any) => {
                </div>
                <ul className='flex flex-col justify-center items-center my-12 gap-12 mt-20'>
                     {
-                         mobileNavList.map((nav: ImobileNavList, idx) => (
+                         mobileNavList.map((nav, idx) => (
                               <li key={idx} className='text-[32px] flex flex-col justify-center capitalize items-center font-pstime'>
                                    <Link href={nav.link}>{nav.name}</Link>
                                    <ul className='flex gap-3'>
