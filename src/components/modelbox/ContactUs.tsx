@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { ImArrowRight2 } from "react-icons/im";
 import { useForm, SubmitHandler } from "react-hook-form";
+import { BsArrowRight } from 'react-icons/bs';
 
 export const ContactUs = ({closeModal}:any) => {
 
@@ -56,7 +57,7 @@ export const ContactUs = ({closeModal}:any) => {
                               <textarea name="" id="" className='block bg-transparent w-full py-1 2xl:py-2 outline-none border-b h-[80px] 2xl:h-[140px]' placeholder='Including budget, goals, aspirations, and more' />
                          </div>
                          <div className='mt-6 2xl:mt-10 flex justify-end'>
-                              <button className='flex items-center font-pstime hover:text-gray text-2xl gap-2' type='submit'>{sending ? 'SENDING...' : `Send`} <ImArrowRight2 /></button>
+                              <button className='hover:text-gray text-xl font-light flex items-center gap-1 w-full justify-end mt-10 ' type='submit'>{sending ? 'SENDING...' : `Send`} <BsArrowRight /></button>
                          </div>
                     </form>
                </section>
