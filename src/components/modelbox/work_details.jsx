@@ -50,8 +50,8 @@ const WorkDetails = ({ closeModal, data }) => {
   }, []);
 
   return (
-    <>
-      <div className="w-screen h-screen mx-auto relative border border-gray/30 z-50 outline-none">
+    <section className="md:p-10 p-5">
+      <div className="w-[96vw] h-[94vh] bg-white mx-auto relative border border-gray/10 z-50 outline-none">
         <button
           className="absolute text-2xl z-[101] bg-yellow rounded-full p-1 md:top-3 top-10 right-3"
           onClick={closeModal}
@@ -102,7 +102,7 @@ const WorkDetails = ({ closeModal, data }) => {
                       alt={""}
                       width={600}
                       height={400}
-                      className="object-contain h-auto md:h-[90vh] overflow-hidden"
+                      className="object-contain h-auto md:h-[82vh] overflow-hidden"
                     />
                   </motion.figure>
                 </div>
@@ -111,7 +111,7 @@ const WorkDetails = ({ closeModal, data }) => {
           </Slider>
         </div>
       </div>
-    </>
+    </section>
   );
 };
 

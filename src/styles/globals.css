@@ -84,3 +84,7 @@ html {
 .headTitle p{
   display: inline;
 }
+
+.ReactModal__Overlay, .ReactModal__Content{
+  background: transparent !important;
+}

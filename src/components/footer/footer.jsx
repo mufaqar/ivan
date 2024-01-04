@@ -63,8 +63,8 @@ const Footer = () => {
           </ul>
         </div>
       </footer>
-
-      <div>
+      
+      <div >
         <Modal
           isOpen={modalIsOpen}
           onRequestClose={closeModal}
