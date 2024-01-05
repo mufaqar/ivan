@@ -88,3 +88,7 @@ html {
  .ReactModal__Content{
   background: transparent !important;
 }
+
+.editor a{
+  text-decoration: underline;
+}

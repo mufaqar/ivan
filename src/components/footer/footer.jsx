@@ -27,7 +27,7 @@ const Footer = () => {
 
   return (
     <>
-      <footer className="md:grid grid-cols-2  p-4 pt-9 mt-32 border-t border-black">
+      <footer className="md:grid grid-cols-2 p-4 pt-9 mt-32 border-t border-black">
         <div>
           <p className="font-light text-lg">
             For inquiries or more info, please{" "}
@@ -64,7 +64,7 @@ const Footer = () => {
         </div>
       </footer>
       
-      <div >
+      <div>
         <Modal
           isOpen={modalIsOpen}
           onRequestClose={closeModal}
@@ -72,7 +72,7 @@ const Footer = () => {
           contentLabel="Example Modal"
           id="modelbox"
         >
-          <ContactUs closeModal={closeModal} />
+          <ContactUs closeModal={closeModal} open={modalIsOpen}/> 
         </Modal>
       </div>
     </>
@@ -85,7 +85,7 @@ export const customStyles = {
   content: {
     top: "50%",
     left: "50%",
-    right: "auto",
+    right: "6rem",
     bottom: "auto",
     marginRight: "-50%",
     transform: "translate(-50%, -50%)",

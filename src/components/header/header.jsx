@@ -50,8 +50,10 @@ const Header = ({ title, headTitle }) => {
      return (
           <>
                <header className={`md:py-5 py-4 px-4  font-pstime z-20 relative gap-10 flex justify-between items-start ${isSticky ? 'sticky ' : ''} top-0  ${pathname === '/info' ? ' text-main bg-transparent' : ' bg-transparent'}`}>
-                    <div className='md:text-[32px] max-w-[500px] md:leading-[42px] md:-mt-1 text-2xl tracking-[0.04em] '>
-                         <div className='pt-5 z-50'>Ivan Iannoli </div>
+                    <div className={`md:text-[32px] max-w-[500px] md:leading-[42px] md:-mt-1 text-2xl tracking-[0.04em] ${mobileNav && 'opacity-0'}`}>
+                         <div className={`pt-5 z-50 `}> 
+                         <span onClick={()=> router.push('/')} className='hover:cursor-pointer'>Ivan Iannoli</span>
+                          </div>
                     </div>
                     <ul className='text-[28px] pt-5 md:flex items-center gap-8 hidden tracking-[0.04em]   smooth'>
                          <li className={`hover:border-black border-b-2 border-transparent leading-[32px] ${pathname.replace('/', '') === 'work' && '!border-black '}`}><Link href="/work">Work</Link></li>
@@ -67,7 +69,7 @@ const Header = ({ title, headTitle }) => {
                     </div>
                </header >
                {/* <div className={` md:text-[32px] px-4 font-pstime z-30 absolute top-10 max-w-[600px] md:leading-[42px] md:-mt-1 text-2xl tracking-[0.04em] ${isSticky ? 'opacity-1' : ''}`} dangerouslySetInnerHTML={{ __html: modifiedTitle }} /> */}
-               <div className={`headTitle md:text-[32px] px-4 font-pstime z-30 absolute top-10 max-w-[600px] md:leading-[42px] md:-mt-1 text-2xl tracking-[0.04em] ${isSticky ? 'opacity-1' : ''}`}>
+               <div className={`headTitle md:text-[32px] px-4 font-pstime z-30 absolute top-10 max-w-[600px] md:leading-[42px] md:-mt-1 text-2xl tracking-[0.04em] ${isSticky ? 'opacity-1' : ''} ${mobileNav && 'opacity-0 max-w-[250px]'}`}>
                          <span onClick={()=> router.push('/')} className='opacity-0 bg-white hover:cursor-pointer'>Ivan Iannoli </span>
                          <BlockContent blocks={headTitle}/>
                </div>
@@ -81,7 +83,7 @@ export default Header
 
 const MobileNavMenu = ({ mobileNav }) => {
      return (
-          <nav className={`bg-yellow p-4 absolute transition-all duration-300 ease-in-out w-full ${mobileNav ? 'top-0' : '-top-[150%]'}`}>
+          <nav className={`bg-yellow p-4 fixed transition-all duration-300 ease-in-out w-full ${mobileNav ? 'top-0' : '-top-[150%]'}`}>
                <div className='flex items-center justify-between'>
                     <p className='text-2xl font-pstime mt-1'>Ivan Iannoli</p>
                </div>

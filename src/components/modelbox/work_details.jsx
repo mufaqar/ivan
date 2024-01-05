@@ -50,16 +50,16 @@ const WorkDetails = ({ closeModal, data }) => {
   }, []);
 
   return (
-    <section className="md:p-10 p-5">
-      <div className="w-[96vw] h-[94vh] bg-white mx-auto relative z-50 outline-none">
+    <section className="overflow-x-hidden">
+      <div className="w-screen h-[90vh] bg-white mx-auto relative z-50 outline-none">
         <button
-          className="absolute text-2xl z-[101] bg-yellow rounded-full p-1 md:top-3 top-10 right-3"
+          className="absolute text-2xl z-[101] bg-yellow rounded-full p-1 md:top-3 top-2 left-2 md:left-10"
           onClick={closeModal}
         >
           <RxCross2 />
         </button>
         <div className="z-50 w-full h-full">
-          <div className="flex flex-col bottom-7 justify-end md:ml-16 z-[100] absolute md:bottom-0 p-4 md:p-7">
+          <div className="flex flex-col bottom-7 justify-end md:ml-6 z-[100] absolute md:bottom-0 p-4 md:p-7">
             <div className="text-4xl mb-4 md:mb-4 flex gap-2">
               <button
                 onClick={() => sliderRef?.current?.slickPrev()}
@@ -84,12 +84,12 @@ const WorkDetails = ({ closeModal, data }) => {
               <div
                 className="!grid md:grid-cols-2"
                 key={id}
-                onClick={closeModal}
+                // onClick={closeModal}
               >
                 <div className="p-4 pb-0 flex md:justify-center pt-12 md:pb-12 md:pt-0 lg:justify-end md:ml-20 items-start flex-col editor">
                   <BlockContent blocks={item?.info} />
                 </div>
-                <div className="flex justify-start md:justify-end items-center flex-col h-full mt-[4%]">
+                <div className="flex justify-start md:justify-end items-center flex-col h-full mt-[2%]">
                   <motion.figure
                     variants={fadeInAnimation}
                     initial="initial"
