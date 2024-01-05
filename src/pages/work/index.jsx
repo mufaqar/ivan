@@ -49,7 +49,7 @@ const Work = ({ allWorks, allTags }) => {
             </li>
           ))}
         </ul>
-        <div className="mt-10 grid md:grid-cols-3 gap-4 md:gap-y-32 md:gap-x-8 xl:container mx-auto">
+        <div className="mt-10 grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-y-32 md:gap-x-8 xl:container mx-auto">
           {works.map((w, id) => {
             var img = w.image?.asset?._ref || fallbackImage;
             return (

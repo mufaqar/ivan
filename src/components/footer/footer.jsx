@@ -49,8 +49,8 @@ const Footer = () => {
             <li>©2024 All rights reserved</li>
           </ul>
         </div>
-        <div className=" md:mt-0 flex justify-end items-start">
-          <ul className="flex items-end gap-8 font-light text-lg">
+        <div className=" md:mt-0 mt-4 flex md:justify-end items-start">
+          <ul className="flex md:items-end gap-8 font-light text-lg">
             {footerLinks?.footer_social?.map((nav, idx) => {
               return (
                 <li className="hover:underline capitalize" key={idx}>
