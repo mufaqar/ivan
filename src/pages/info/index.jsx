@@ -8,20 +8,20 @@ import React, { useState } from 'react';
 import { SlArrowDown } from 'react-icons/sl';
 import { SlArrowUp } from 'react-icons/sl';
 import { client } from '../../../sanity/lib/client';
-import { CV } from '../../../sanity/lib/queries';
+import { CV, siteSetting } from '../../../sanity/lib/queries';
 import BlockContent from '@sanity/block-content-to-react';
 
 const Htitle =
   '<span>Ivan Iannoli</span> lives and works in SF* and can be reached at 555-555-5555, <u>email@iannoli.com</u>, <u>@ivaniannoli</u>';
 
-const Info = ({ allInfo }) => {
-  console.log("🚀 ~ file: index.jsx:18 ~ Info ~ allInfo:", allInfo)
+const Info = ({ allInfo, siteSettingRes }) => {
+  console.log("🚀 ~ file: index.jsx:18 ~ Info ~ allInfo:", siteSettingRes)
   const [openCV, setOpenCV] = useState(false);
   const [expand, setExpand] = useState(true);
   const { Features, cv, cvbio, education, cvsections, info, title } = allInfo[0];
   return (
     <div className="bg-yellow">
-      <Header headTitle={allInfo[0]?.headTitle} />
+      <Header headTitle={siteSettingRes?.infoheadTitle} />
       <Layout>
         <section className="py-28 mt-16 border-b">
           <h2 className="font-pstime text-4xl md:text-5xl lg:text-6xl">
@@ -87,9 +87,12 @@ export default Info;
 
 export async function getServerSideProps() {
   const allInfo = await client.fetch(CV);
+  const siteSettingRes = await client.fetch(siteSetting);
+
   return {
     props: {
       allInfo,
+      siteSettingRes,
       preview: true,
     },
   };

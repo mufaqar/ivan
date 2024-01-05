@@ -85,6 +85,6 @@ html {
   display: inline;
 }
 
-.ReactModal__Overlay, .ReactModal__Content{
+ .ReactModal__Content{
   background: transparent !important;
 }

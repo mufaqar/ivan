@@ -51,7 +51,7 @@ const WorkDetails = ({ closeModal, data }) => {
 
   return (
     <section className="md:p-10 p-5">
-      <div className="w-[96vw] h-[94vh] bg-white mx-auto relative border border-gray/10 z-50 outline-none">
+      <div className="w-[96vw] h-[94vh] bg-white mx-auto relative z-50 outline-none">
         <button
           className="absolute text-2xl z-[101] bg-yellow rounded-full p-1 md:top-3 top-10 right-3"
           onClick={closeModal}
